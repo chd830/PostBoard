@@ -1,6 +1,6 @@
 package ac.dankook.postboard.controller;
 
-import ac.dankook.postboard.data.LogIn;
+import ac.dankook.postboard.data.User;
 import ac.dankook.postboard.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,13 +23,15 @@ public class LoginController {
     @ResponseBody
     public String logIn(@RequestParam String userId, @RequestParam String userPw) {
         Boolean checkPw;
-        LogIn login = new LogIn();
-        login.setUserId(userId);
-        login.setUserPw(userPw);
-        checkPw = userService.checkPassword(login);
+        User user = new User();
+        user.setUserId(userId);
+        user.setUserPw(userPw);
+        user.setUserName(" ");
+        user.setEmail(" ");
+        checkPw = userService.checkPassword(user);
         if(checkPw)
             return "post";
         else
-            return "login";
+            return " ";
     }
 }

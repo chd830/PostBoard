@@ -1,6 +1,5 @@
 package ac.dankook.postboard.repository;
 
-import ac.dankook.postboard.data.LogIn;
 import ac.dankook.postboard.data.User;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +13,7 @@ public class UserRepositoryImpl implements UserRepository {
     public void setUserData(User user) {
         sqlSession.selectOne("userdataMapper.setUserData",user);
     }
-    public LogIn getUserPassword(String userId) {
-        return sqlSession.selectOne("userdataMapper.getUserPassword",userId);
+    public User getUserPassword(User user) {
+        return sqlSession.selectOne("userdataMapper.getUserPassword",user);
     }
 }

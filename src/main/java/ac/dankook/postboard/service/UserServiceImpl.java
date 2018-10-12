@@ -1,6 +1,5 @@
 package ac.dankook.postboard.service;
 
-import ac.dankook.postboard.data.LogIn;
 import ac.dankook.postboard.data.User;
 import ac.dankook.postboard.repository.UserRepository;
 import org.slf4j.Logger;
@@ -17,13 +16,12 @@ public class UserServiceImpl implements UserService {
     public void setSignUpData(User user) {
         userRepository.setUserData(user);
     }
-    public LogIn getUserPassword(LogIn login) {
-        LogIn user = userRepository.getUserPassword(login.getUserId());;
-        return user;
+    public User getUserPassword(User user) {
+        return userRepository.getUserPassword(user);
     }
-    public Boolean checkPassword(LogIn login) {
-        String userPw = login.getUserPw();
-        String checkPw = this.getUserPassword(login).getUserPw();
+    public Boolean checkPassword(User user) {
+        String userPw = user.getUserPw();
+        String checkPw = this.getUserPassword(user).getUserPw();
         LOGGER.debug(userPw);
         LOGGER.debug(checkPw);
 

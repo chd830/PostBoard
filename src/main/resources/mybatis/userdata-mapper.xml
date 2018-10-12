@@ -7,7 +7,7 @@
         INSERT INTO userTable(userId,userPw,userName,email,createDate,updateDate)
         VALUES (#{userId},#{userPw},#{userName},#{email},NOW(),NOW());
     </insert>
-    <select id="getUserPassword" resultType="ac.dankook.postboard.data.LogIn">
+    <select id="getUserPassword" resultType="ac.dankook.postboard.data.User">
         SELECT userId,userPw
         FROM userTable
         WHERE userId=#{userId};
