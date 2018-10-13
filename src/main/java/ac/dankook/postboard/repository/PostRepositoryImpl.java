@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 public class PostRepositoryImpl implements PostRepository {
     @Autowired
     private SqlSession sqlSession;
-    static final Logger LOGGER = LoggerFactory.getLogger(PostRepositoryImpl.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(PostRepositoryImpl.class);
     public void testMybatisRepository() {
         LOGGER.debug("TestRepositoryImpl");
         sqlSession.selectOne("testMapper.insertTestData");

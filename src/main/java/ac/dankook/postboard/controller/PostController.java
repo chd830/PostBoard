@@ -9,6 +9,7 @@ public class PostController {
 
     @RequestMapping("/post")
     public String test() {
+
         return "post";
     }
 }

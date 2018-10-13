@@ -7,11 +7,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
+
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
     UserRepository userRepository;
-    public static Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
+    private static Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
 
     public void setSignUpData(User user) {
         userRepository.setUserData(user);
@@ -33,5 +36,8 @@ public class UserServiceImpl implements UserService {
             LOGGER.debug("false");
             return false;
         }
+    }
+    public String Cookie(User user) {
+        return user.getUserId();
     }
 }
