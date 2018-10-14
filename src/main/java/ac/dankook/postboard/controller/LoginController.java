@@ -15,10 +15,7 @@ public class LoginController {
     UserService userService;
 
     @RequestMapping(value="/")
-    public String login(HttpServletResponse response) {
-        Cookie cookie = new Cookie("name","test");
-        cookie.setMaxAge(60*60*1);
-        response.addCookie(cookie);
+    public String login() {
         return "login";
     }
 //    public Cookie makeCookie(HttpServletResponse response,String userId) {

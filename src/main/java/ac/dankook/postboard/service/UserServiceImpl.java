@@ -37,7 +37,4 @@ public class UserServiceImpl implements UserService {
             return false;
         }
     }
-    public String Cookie(User user) {
-        return user.getUserId();
-    }
 }

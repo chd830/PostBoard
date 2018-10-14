@@ -4,7 +4,6 @@ document.getElementById("loginBtn").onclick = function() {
     var id=$('#userId').val();
     var pw=$('#userPassword').val();
 
-    console.log("id: "+id+",pw: "+pw);
     $.get('/rest/login',{
         userId: id,
         userPw: pw
