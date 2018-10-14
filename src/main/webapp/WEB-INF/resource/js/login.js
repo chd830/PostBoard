@@ -8,8 +8,10 @@ document.getElementById("loginBtn").onclick = function() {
         userId: id,
         userPw: pw
     },function(result) {
-        if(result !== null)
+        if(result !== null) {
+            window.cookie=id;
             location.href=result;
+        }
         else {
             alert("wrong password!");
         }
