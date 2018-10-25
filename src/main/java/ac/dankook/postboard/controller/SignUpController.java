@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class SignUpController {
 
     private static Logger LOGGER = LoggerFactory.getLogger(SignUpController.class);
+
     @Autowired
     UserService userService;
 

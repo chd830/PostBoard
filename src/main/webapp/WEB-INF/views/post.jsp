@@ -62,13 +62,13 @@
             </ol>
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <img data-src="holder.js/1200x500/text:First slide" alt="test1">
+                    <img src="https://images.unsplash.com/photo-1503485838016-53579610c389?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2b1c6ac2045430c177f70d08ae4c5b09&auto=format&fit=crop&w=1050&q=80" height="300px" alt="test1">
                 </div>
                 <div class="item">
-                    <img data-src="holder.js/1200x500/text:Second slide" alt="test2">
+                    <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=07df4ad552d3627b7cbc7836321d9a03&auto=format&fit=crop&w=1050&q=80" height="300px" lt="test2">
                 </div>
                 <div class="item">
-                    <img data-src="holder.js/1200x500/text:Third slide" alt="test3">
+                    <img src="https://images.unsplash.com/photo-1514077583608-aedd9ec18c40?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=00120704bddcd3ac000341ad7bbead96&auto=format&fit=crop&w=1050&q=80" height="300px" alt="test3">
                 </div>
             </div>
             <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">

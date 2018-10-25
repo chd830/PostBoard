@@ -25,7 +25,7 @@ public class UserServiceImpl implements UserService {
     public Boolean checkPassword(User user) {
         String userPw = user.getUserPw();
         String checkPw = this.getUserPassword(user).getUserPw();
-        LOGGER.debug(userPw);
+        LOGGER.debug("input password: "+userPw);
         LOGGER.debug(checkPw);
 
         if(checkPw.equals(userPw)) {

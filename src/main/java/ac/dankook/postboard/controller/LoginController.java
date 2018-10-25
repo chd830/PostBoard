@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @Controller
 public class LoginController {
-    static private Logger LOGGER = LoggerFactory.getLogger(LoginController.class);
+    private static Logger LOGGER = LoggerFactory.getLogger(LoginController.class);
     @Autowired
     UserService userService;
 
@@ -32,9 +32,13 @@ public class LoginController {
         user.setUserName(" ");
         user.setEmail(" ");
         checkPw = userService.checkPassword(user);
-        if(checkPw)
+        if(checkPw) {
+            LOGGER.debug("LoginSuccess");
             return "post";
-        else
+        }
+        else {
+            LOGGER.debug("LoginFailed");
             return " ";
+        }
     }
 }
