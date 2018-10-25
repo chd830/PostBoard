@@ -24,7 +24,7 @@ public class LoginController {
 
     @RequestMapping(value="/rest/login",method= RequestMethod.GET)
     @ResponseBody
-    public String logIn(@RequestParam String userId, @RequestParam String userPw,HttpServletResponse response) {
+    public Boolean logIn(@RequestParam String userId, @RequestParam String userPw,HttpServletResponse response) {
         Boolean checkPw;
         User user = new User();
         user.setUserId(userId);
@@ -32,13 +32,6 @@ public class LoginController {
         user.setUserName(" ");
         user.setEmail(" ");
         checkPw = userService.checkPassword(user);
-        if(checkPw) {
-            LOGGER.debug("LoginSuccess");
-            return "post";
-        }
-        else {
-            LOGGER.debug("LoginFailed");
-            return " ";
-        }
+        return checkPw;
     }
 }

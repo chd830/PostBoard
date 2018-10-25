@@ -8,7 +8,7 @@ document.getElementById("loginBtn").onclick = function() {
         userId: id,
         userPw: pw
     },function(result) {
-        if(result === true) {
+        if(result) {
             location.href="post";
         }
         else {
