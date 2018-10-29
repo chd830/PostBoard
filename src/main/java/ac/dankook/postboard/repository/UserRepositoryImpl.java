@@ -5,15 +5,45 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public class UserRepositoryImpl implements UserRepository {
+    private static final String MAPPER = "userdataMapper";
     @Autowired
     SqlSession sqlSession;
 
-    public void setUserData(User user) {
-        sqlSession.selectOne("userdataMapper.setUserData",user);
+    @Override
+    public User insert(User entity) {
+        return sqlSession.selectOne(MAPPER + ".insert", entity);
     }
-    public User getUserPassword(User user) {
-        return sqlSession.selectOne("userdataMapper.getUserPassword",user);
+
+    @Override
+    public User selectOne(Long aLong) {
+        return sqlSession.selectOne(MAPPER + ".getUserPassword", aLong);
     }
+
+    @Override
+    public List<User> selectList(Object criteria) {
+        return sqlSession.selectList(MAPPER + ".getUserNo", criteria);
+    }
+
+    @Override
+    public int update(User entity) {
+        return 0;
+    }
+
+    @Override
+    public int delete(Long entity) {
+        return 0;
+    }
+
+    public User getPassword(User user) {
+        User data = sqlSession.selectOne(MAPPER + ".getUserNo", user);
+        return sqlSession.selectOne(MAPPER + ".getUserPassword", data.getUserNo());
+    }
+
+//    public User getUserNo(User user) {
+//        return sqlSession.selectOne(MAPPER + ".getUserNo", user);
+//    }
 }

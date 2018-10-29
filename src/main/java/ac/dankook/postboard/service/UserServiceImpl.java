@@ -17,14 +17,14 @@ public class UserServiceImpl implements UserService {
     private static Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
 
     public void setSignUpData(User user) {
-        userRepository.setUserData(user);
+        userRepository.insert(user);
     }
-    public User getUserPassword(User user) {
-        return userRepository.getUserPassword(user);
+    public String getUserPassword(User user) {
+        return userRepository.getPassword(user).getUserPw();
     }
-    public Boolean checkPassword(User user) {
+    public boolean checkPassword(User user) {
         String userPw = user.getUserPw();
-        String checkPw = this.getUserPassword(user).getUserPw();
+        String checkPw = this.getUserPassword(user);
         LOGGER.debug("input password: "+userPw);
         LOGGER.debug(checkPw);
 

@@ -2,6 +2,7 @@ package ac.dankook.postboard.controller;
 
 import ac.dankook.postboard.data.User;
 import ac.dankook.postboard.service.UserService;
+import org.json.simple.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,16 +23,17 @@ public class LoginController {
         return "login";
     }
 
+    @SuppressWarnings("unchecked")
     @RequestMapping(value="/rest/login",method= RequestMethod.GET)
     @ResponseBody
-    public Boolean logIn(@RequestParam String userId, @RequestParam String userPw,HttpServletResponse response) {
-        Boolean checkPw;
+    public String logIn(@RequestParam String userId, @RequestParam String userPw,HttpServletResponse response) {
+        JSONObject json = new JSONObject();
+
         User user = new User();
         user.setUserId(userId);
         user.setUserPw(userPw);
-        user.setUserName(" ");
-        user.setEmail(" ");
-        checkPw = userService.checkPassword(user);
-        return checkPw;
+//        return userService.checkPassword(user);
+        json.put("checked", userService.checkPassword(user));
+        return json.toJSONString();
     }
 }

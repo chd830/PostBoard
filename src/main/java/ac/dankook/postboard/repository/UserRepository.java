@@ -2,7 +2,7 @@ package ac.dankook.postboard.repository;
 
 import ac.dankook.postboard.data.User;
 
-public interface UserRepository {
-    public void setUserData(User user);
-    public User getUserPassword(User user);
+public interface UserRepository extends BaseRepository<User,Long>{
+    public User getPassword(User user);
+//    public User getUserNo(User user);
 }

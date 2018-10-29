@@ -3,13 +3,18 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="userdataMapper">
-    <insert id="setUserData">
+    <insert id="insert">
         INSERT INTO userTable(userId,userPw,userName,email,createDate,updateDate)
         VALUES (#{userId},#{userPw},#{userName},#{email},NOW(),NOW());
     </insert>
-    <select id="getUserPassword" resultType="ac.dankook.postboard.data.User">
-        SELECT userId,userPw
+    <select id="getUserNo" resultType="ac.dankook.postboard.data.User">
+        SELECT userNo
         FROM userTable
         WHERE userId=#{userId};
+    </select>
+    <select id="getUserPassword" resultType="ac.dankook.postboard.data.User">
+        SELECT userPw
+        FROM usertable
+        WHERE userNo=#{userNo};
     </select>
 </mapper>
