@@ -32,8 +32,7 @@ public class LoginController {
         User user = new User();
         user.setUserId(userId);
         user.setUserPw(userPw);
-//        return userService.checkPassword(user);
-        json.put("checked", userService.checkPassword(user));
+        json.put("result", userService.checkPassword(user));
         return json.toJSONString();
     }
 }

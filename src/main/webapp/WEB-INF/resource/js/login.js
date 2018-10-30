@@ -8,8 +8,15 @@ document.getElementById("loginBtn").onclick = function () {
         userId: id,
         userPw: pw
     }, function (result) {
+        var check="";
         console.dir(result);
-        if (result === "{\"result\":true}") {
+        var length = Object.keys(result).length;
+        for(var num=10;num<length-1;num++) {
+            check +=result[num];
+        }
+        console.dir(check);
+
+        if (check === "true") {
             location.replace("/post");
         }
         else {
