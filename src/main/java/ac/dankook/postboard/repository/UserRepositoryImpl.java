@@ -25,7 +25,7 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public List<User> selectList(Object criteria) {
-        return sqlSession.selectList(MAPPER + ".getUserNo", criteria);
+        return null;
     }
 
     @Override
@@ -40,10 +40,7 @@ public class UserRepositoryImpl implements UserRepository {
 
     public User getPassword(User user) {
         User data = sqlSession.selectOne(MAPPER + ".getUserNo", user);
-        return sqlSession.selectOne(MAPPER + ".getUserPassword", data.getUserNo());
+        return this.selectOne(data.getUserNo());
     }
 
-//    public User getUserNo(User user) {
-//        return sqlSession.selectOne(MAPPER + ".getUserNo", user);
-//    }
 }
