@@ -18,13 +18,13 @@ public class LoginController {
     UserService userService;
 
     @RequestMapping(value="/")
-    public String login() {
+    public String signin() {
         LOGGER.debug("LogInController");
-        return "login";
+        return "signin";
     }
 
     @SuppressWarnings("unchecked")
-    @RequestMapping(value="/rest/login",method= RequestMethod.GET)
+    @RequestMapping(value="/rest/signin",method= RequestMethod.GET)
     @ResponseBody
     public String logIn(@RequestParam String userId, @RequestParam String userPw,HttpServletResponse response) {
         JSONObject json = new JSONObject();

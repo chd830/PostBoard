@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>Login</title>
-    <link type="text/css" rel="stylesheet" href="/resources/css/login.css"/>
+    <link type="text/css" rel="stylesheet" href="/resources/css/signin.css"/>
 </head>
 <body>
 <div class="login">
@@ -35,7 +35,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
-    <script src="/resources/js/login.js"></script>
+    <script src="/resources/js/signin.js"></script>
 </div>
 </body>
 </html>

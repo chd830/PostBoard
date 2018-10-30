@@ -43,6 +43,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
                 </li>
+                <li id="sign-in">
+                    <a class="nav-link" href="#">SignIn</a>
+                </li>
+                <li id="sign-up">
+                    <a class="nav-link" href="#">SignUp</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -70,7 +76,7 @@
                 <div class="item">
                     <img src="https://images.unsplash.com/photo-1514077583608-aedd9ec18c40?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=00120704bddcd3ac000341ad7bbead96&auto=format&fit=crop&w=1050&q=80" height="300px" alt="test3">
                 </div>
-            </div>
+            /div>
             <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
