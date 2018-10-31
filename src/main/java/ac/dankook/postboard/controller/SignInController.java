@@ -17,7 +17,7 @@ public class SignInController {
     @Autowired
     UserService userService;
 
-    @RequestMapping(value="/signin")
+    @RequestMapping(value="/")
     public String signin() {
         LOGGER.debug("LogInController");
         return "signin";

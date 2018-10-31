@@ -43,12 +43,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
                 </li>
-                <li id="sign-in">
-                    <a class="nav-link" href="#">SignIn</a>
-                </li>
-                <li id="sign-up">
-                    <a class="nav-link" href="#">SignUp</a>
-                </li>
                 <li id="log-out">
                     <a class="nav-link" href="#">LogOut</a>
                 </li>

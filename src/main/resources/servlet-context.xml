@@ -6,6 +6,7 @@
 
     <mvc:annotation-driven/> <!-- Annotation 활성화 -->
     <mvc:resources mapping="/resources/**" location="/WEB-INF/resource/"/>
+
     <context:component-scan base-package="ac.dankook.postboard.controller" use-default-filters="false">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan> <!-- Component 패키지 지정 -->
