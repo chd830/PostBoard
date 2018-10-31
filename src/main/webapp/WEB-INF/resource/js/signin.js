@@ -3,7 +3,6 @@
 document.getElementById("loginBtn").onclick = function () {
     var id = $('#userId').val();
     var pw = $('#userPassword').val();
-    document.cookie = id;
     $.get('/rest/signin', {
         userId: id,
         userPw: pw
@@ -17,6 +16,7 @@ document.getElementById("loginBtn").onclick = function () {
         console.dir(check);
 
         if (check === "true") {
+            document.cookie="cookie = "+id;
             location.replace("/");
         }
         else {
@@ -24,4 +24,3 @@ document.getElementById("loginBtn").onclick = function () {
         }
     })
 };
-

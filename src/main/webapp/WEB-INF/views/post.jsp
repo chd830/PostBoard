@@ -49,6 +49,9 @@
                 <li id="sign-up">
                     <a class="nav-link" href="#">SignUp</a>
                 </li>
+                <li id="log-out">
+                    <a class="nav-link" href="#">LogOut</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -68,13 +71,16 @@
             </ol>
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <img src="https://images.unsplash.com/photo-1503485838016-53579610c389?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2b1c6ac2045430c177f70d08ae4c5b09&auto=format&fit=crop&w=1050&q=80" height="300px" alt="test1">
+                    <img alt="test1">
+                    <%--src="https://images.unsplash.com/photo-1503485838016-53579610c389?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2b1c6ac2045430c177f70d08ae4c5b09&auto=format&fit=crop&w=1050&q=80" height="300px"--%>
                 </div>
                 <div class="item">
-                    <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=07df4ad552d3627b7cbc7836321d9a03&auto=format&fit=crop&w=1050&q=80" height="300px" lt="test2">
+                    <img height="300px" lt="test2">
+                    <%--src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=07df4ad552d3627b7cbc7836321d9a03&auto=format&fit=crop&w=1050&q=80"--%>
                 </div>
                 <div class="item">
-                    <img src="https://images.unsplash.com/photo-1514077583608-aedd9ec18c40?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=00120704bddcd3ac000341ad7bbead96&auto=format&fit=crop&w=1050&q=80" height="300px" alt="test3">
+                    <img  height="300px" alt="test3">
+                    <%--src="https://images.unsplash.com/photo-1514077583608-aedd9ec18c40?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=00120704bddcd3ac000341ad7bbead96&auto=format&fit=crop&w=1050&q=80"--%>
                 </div>
             /div>
             <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">

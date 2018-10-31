@@ -27,8 +27,6 @@
             </div>
 
             <button id="loginBtn" type="submit" class="float">Login</button>
-            <div id="signupBtn">SignUp</div>
-        </form>
     </div>
     <!-- Bootstrap core JavaScript -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
