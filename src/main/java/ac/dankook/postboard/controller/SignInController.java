@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletResponse;
 
 @Controller
-public class LoginController {
-    private static Logger LOGGER = LoggerFactory.getLogger(LoginController.class);
+public class SignInController {
+    private static Logger LOGGER = LoggerFactory.getLogger(SignInController.class);
     @Autowired
     UserService userService;
 

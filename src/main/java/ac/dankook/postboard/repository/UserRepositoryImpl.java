@@ -20,7 +20,7 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public User selectOne(Long aLong) {
-        return sqlSession.selectOne(MAPPER + ".getUserPassword", aLong);
+        return sqlSession.selectOne(MAPPER + ".selectUserPassword", aLong);
     }
 
     @Override
@@ -39,7 +39,7 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     public User getPassword(User user) {
-        User data = sqlSession.selectOne(MAPPER + ".getUserNo", user);
+        User data = sqlSession.selectOne(MAPPER + ".selectUserNo", user);
         return this.selectOne(data.getUserNo());
     }
 
