@@ -3,7 +3,10 @@ history.pushState(null, null, location.href);
 window.onpopstate = function (event) {
     history.go(1);
 };
-
+$(document).ready(function() {
+    $('#myCarousel').carousel('cycle');
+    $('#myCarousel2').carousel('cycle');
+});
 var signinBtn = document.getElementById("sign-in");
 signinBtn.onclick = function () {
     location.replace('/signin');

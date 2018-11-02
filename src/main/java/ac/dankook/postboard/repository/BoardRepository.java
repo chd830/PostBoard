@@ -1,5 +1,5 @@
 package ac.dankook.postboard.repository;
 
-public interface PostRepository {
+public interface BoardRepository {
     void testMybatisRepository();
 }

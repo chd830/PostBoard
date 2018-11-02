@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <%--<script src="http://googledrive.com/host/0B-QKv6rUoIcGeHd6VV9JczlHUjg"></script><!-- holder.js link -->--%>
-    <link type="text/css" rel="stylesheet" href="/resources/css/post.css"/>
+    <script src="http://googledrive.com/host/0B-QKv6rUoIcGeHd6VV9JczlHUjg"></script><!-- holder.js link -->
+    <link type="text/css" rel="stylesheet" href="/resources/css/board.css"/>
 
 </head>
 
@@ -82,7 +82,7 @@
                     <img  height="300px" alt="test3">
                     <%--src="https://images.unsplash.com/photo-1514077583608-aedd9ec18c40?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=00120704bddcd3ac000341ad7bbead96&auto=format&fit=crop&w=1050&q=80"--%>
                 </div>
-            /div>
+            </div>
             <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
@@ -160,7 +160,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
-    <script src="/resources/js/post.js"></script>
+    <script src="/resources/js/board.js"></script>
 </div>
 </body>
 

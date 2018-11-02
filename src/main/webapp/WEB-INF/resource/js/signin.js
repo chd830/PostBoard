@@ -19,7 +19,7 @@ document.getElementById("loginBtn").onclick = function () {
             document.cookie="cookie = "+id;
             location.replace("/");
         }
-        else {
+            else {
             alert("wrong password!");
         }
     })
