@@ -1,6 +1,6 @@
 package ac.dankook.postboard.data;
 
-public class Comment {
+public class PostComment {
     String content;
     int userId;
     String userName;
