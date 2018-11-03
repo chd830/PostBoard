@@ -24,7 +24,12 @@ if (document.cookie != "cookie = ") {
 var logoutBtn = document.getElementById("log-out");
 logoutBtn.onclick = function () {
     document.cookie = "cookie = ";
+    alert("logout!");
     $('#sign-in').css('visibility', 'visible');
     $('#sign-up').css('visibility', 'visible');
     $('#log-out').css('visibility', 'hidden');
+}
+var writeBtn = document.getElementById("writeBtn");
+writeBtn.onclick = function() {
+    location.replace('/write');
 }

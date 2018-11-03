@@ -8,7 +8,8 @@
 }
 
 body {
-    background-image: url('https://images.unsplash.com/photo-1532759627329-f664e1222001?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=537cade15160d9b107efb16a1456bb5d&auto=format&fit=crop&w=1952&q=80');
+    background-image: url('https://images.unsplash.com/photo-1505678137082-8a4376f90c86?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5f10deb85f67f64cc185b5b61b547cdc&auto=format&fit=crop&w=1050&q=80');
+    /*background-image: url('https://images.unsplash.com/photo-1532759627329-f664e1222001?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=537cade15160d9b107efb16a1456bb5d&auto=format&fit=crop&w=1952&q=80');*/
     /*background-image: url('https://images.unsplash.com/photo-1422207258071-70754198c4a2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b3ead7d2589717f5e1449373f47426e2&auto=format&fit=crop&w=1041&q=80');*/
     background-size: cover;
 }
