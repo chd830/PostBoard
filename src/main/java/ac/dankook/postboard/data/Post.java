@@ -1,12 +1,30 @@
 package ac.dankook.postboard.data;
 
 public class Post {
+    int userNo;
+    int tagNo;
     String title;
     String content;
     int userId;
     String userName;
     int positive;
     int negative;
+
+    public int getUserNo() {
+        return userNo;
+    }
+
+    public void setUserNo(int userNo) {
+        this.userNo = userNo;
+    }
+
+    public int getTagNo() {
+        return tagNo;
+    }
+
+    public void setTagNo(int tagNo) {
+        this.tagNo = tagNo;
+    }
 
     public String getTitle() {
         return title;

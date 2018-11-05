@@ -5,7 +5,7 @@
 <mapper namespace="postdataMapper">
     <insert id="insertPost">
         INSERT INTO posttable(userNo,tagNo,title,content,positive,negative,createDate,updateDate)
-        VALUES (#{userNo},#{tagNo},#{title},#{content},#{positive},#{negative},NOW(),NOW());
+        VALUES (#{userNo},2,#{title},#{content},#{positive},#{negative},NOW(),NOW());
     </insert>
     <insert id="insertComment">
         INSERT INTO commenttable(postNo,userNo,content,positive,negative, createDate,updateDate)

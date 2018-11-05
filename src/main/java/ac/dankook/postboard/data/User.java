@@ -1,15 +1,15 @@
 package ac.dankook.postboard.data;
 
 public class User {
-    private long userNo;
+    private int userNo;
     private String userId;
     private String userPw;
     private String userName;
     private String email;
 
-    public long getUserNo() { return userNo; }
+    public int getUserNo() { return userNo; }
 
-    public void setUserNo(long userNo) { this.userNo = userNo; }
+    public void setUserNo(int userNo) { this.userNo = userNo; }
 
     public String getUserId() {
         return userId;

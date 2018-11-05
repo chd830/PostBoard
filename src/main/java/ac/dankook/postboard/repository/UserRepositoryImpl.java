@@ -13,14 +13,26 @@ public class UserRepositoryImpl implements UserRepository {
     @Autowired
     SqlSession sqlSession;
 
+    public User getUserNo(User user) {
+        return sqlSession.selectOne(MAPPER + ".selectUserNo", user);
+    }
+    public User getUserName(User user) {
+        return sqlSession.selectOne(MAPPER+".selectUserName",this.getUserNo(user).getUserNo());
+
+    }
+    public User getPassword(User user) {
+        return this.selectOne(this.getUserNo(user).getUserNo());
+    }
+
     @Override
     public User insert(User entity) {
         return sqlSession.selectOne(MAPPER + ".insert", entity);
     }
 
     @Override
-    public User selectOne(Long aLong) {
-        return sqlSession.selectOne(MAPPER + ".selectUserPassword", aLong);
+    public User selectOne(Integer integer) {
+        return sqlSession.selectOne(MAPPER + ".selectUserPassword", integer);
+
     }
 
     @Override
@@ -34,13 +46,7 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
-    public int delete(Long entity) {
+    public int delete(Integer entity) {
         return 0;
     }
-
-    public User getPassword(User user) {
-        User data = sqlSession.selectOne(MAPPER + ".selectUserNo", user);
-        return this.selectOne(data.getUserNo());
-    }
-
 }
