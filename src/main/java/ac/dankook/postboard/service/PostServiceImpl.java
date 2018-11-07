@@ -9,8 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class PostServiceImpl implements PostService {
@@ -29,11 +28,14 @@ public class PostServiceImpl implements PostService {
 
     public HashMap<String, String> getPost(User user) {
         HashMap<String, String> post = new HashMap<>();
-        for (int i = 0; i<this.getPostTitle(user).size(); i++) {
+        for (int i = 0; i < this.getPostTitle(user).size(); i++) {
             String title = this.getPostTitle(user).get(i);
-            String content =this.getPostContent(user).get(i);
-            post.put(title,content );
+            String content = this.getPostContent(user).get(i);
+            post.put(title, content);
         }
+        Set<String> postSet = post.keySet();
+        Iterator<String> iterator = postSet.iterator();
+
         return post;
     }
 

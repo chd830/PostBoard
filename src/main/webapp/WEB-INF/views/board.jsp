@@ -120,8 +120,9 @@
     <div class="row">
         <div class="col-md-4 mb-4">
             <div class="card h-100">
-                <div id="cardOne" class="card-body">
-                    <h2 class="card-title">Card One</h2>
+                <div id="oneDiv" class="card-body">
+                    <h2 id="h2cardOne" class="card-title" >Card One</h2>
+                    <h4 id="h4cardOne" class="card-content">card Test</h4>
                 </div>
             </div>
         </div>
@@ -129,7 +130,8 @@
         <div class="col-md-4 mb-4">
             <div class="card h-100">
                 <div class="card-body">
-                    <h2 class="card-title">Card Two</h2>
+                    <h2 id="h2cardTwo" class="card-title">Card Two</h2>
+                    <h4 id="h4cardTwo" class="card-content">card two</h4>
                 </div>
             </div>
         </div>
@@ -137,7 +139,8 @@
         <div class="col-md-4 mb-4">
             <div class="card h-100">
                 <div class="card-body">
-                    <h2 class="card-title">Card Three</h2>
+                    <h2 id="h2cardThree" class="card-title">Card Three</h2>
+                    <h4 id="h4cardThree" class="card-content">card three</h4>
                 </div>
             </div>
             <!-- /.col-md-4 -->
