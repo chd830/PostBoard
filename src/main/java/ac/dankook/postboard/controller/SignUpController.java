@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class SignUpController {
@@ -23,6 +24,7 @@ public class SignUpController {
         return "signup";
     }
 
+    @ResponseBody
     @RequestMapping(value="/rest/signup",method= RequestMethod.POST)
     public void setUserData(@RequestParam String userId,@RequestParam String userPw,@RequestParam String userName,@RequestParam String email) {
         User user= new User();

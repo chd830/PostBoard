@@ -4,11 +4,11 @@ window.onpopstate = function (event) {
     history.go(1);
 };
 $(document).ready(function() {
-    $('#myCarousel').carousel('cycle');
-    $('#myCarousel2').carousel('cycle');
     $('#sign-in').css('visibility', 'visible');
     $('#sign-up').css('visibility', 'visible');
     $('#log-out').css('visibility', 'hidden');
+
+
 });
 var signinBtn = document.getElementById("sign-in");
 signinBtn.onclick = function () {
@@ -36,3 +36,14 @@ var writeBtn = document.getElementById("writeBtn");
 writeBtn.onclick = function() {
     location.replace('/write');
 }
+$('#cardOne').click(function() {
+    $.get('/rest/board',{
+    },function(result) {
+        for (var key in result) {
+            console.log("key: "+key);
+            console.log("value: "+result[key]);
+        }
+
+    })
+})
+

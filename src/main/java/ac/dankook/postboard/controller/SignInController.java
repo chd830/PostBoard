@@ -7,8 +7,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 
 @Controller
@@ -17,18 +21,20 @@ public class SignInController {
     @Autowired
     UserService userService;
 
-    @RequestMapping(value="/signin")
+    @RequestMapping(value = "/signin")
     public String signin() {
         LOGGER.debug("LogInController");
         return "signin";
     }
 
     @SuppressWarnings("unchecked")
-    @RequestMapping(value="/rest/signin",method= RequestMethod.GET)
+    @RequestMapping(value = "/rest/signin", method = RequestMethod.GET)
     @ResponseBody
-    public String logIn(@RequestParam String userId, @RequestParam String userPw,HttpServletResponse response) {
+    public String logIn(@RequestParam String userId, @RequestParam String userPw, HttpServletResponse response) {
+        Cookie cookie = new Cookie("testcookie",userId);
+        cookie.setMaxAge(60*3*1);
+        response.addCookie(cookie);
         JSONObject json = new JSONObject();
-
         User user = new User();
         user.setUserId(userId);
         user.setUserPw(userPw);

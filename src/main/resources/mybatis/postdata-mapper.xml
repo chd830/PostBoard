@@ -11,4 +11,18 @@
         INSERT INTO commenttable(postNo,userNo,content,positive,negative, createDate,updateDate)
         VALUES (#{postNo},#{userNo},#{content},#{positive},#{negative},NOW(),NOW())
     </insert>
+    <select id="selectTitle" resultType="String">
+        SELECT title
+        FROM posttable
+        WHERE userNo=#{userNo}
+        ORDER BY updateDate
+        DESC;
+    </select>
+    <select id="selectContent" resultType="String">
+        SELECT content
+        FROM posttable
+        WHERE userNo=#{userNo}
+        ORDER BY updateDate
+        DESC;
+    </select>
 </mapper>

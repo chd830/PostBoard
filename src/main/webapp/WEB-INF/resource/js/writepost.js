@@ -8,5 +8,7 @@ $('#save').click(function() {
         userId: window.cookie,
         title: title,
         content: content
+    },function() {
+        location.replace("/");
     });
 });

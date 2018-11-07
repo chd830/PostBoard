@@ -9,8 +9,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+import java.util.List;
+
 @Service
-public class PostServiceImpl implements PostService{
+public class PostServiceImpl implements PostService {
     private static final Logger LOGGER = LoggerFactory.getLogger(PostService.class);
 
     @Autowired
@@ -18,9 +21,27 @@ public class PostServiceImpl implements PostService{
     @Autowired
     UserRepository userRepository;
 
-    public void setPost(Post post,User user) {
+    public void setPost(Post post, User user) {
         post.setUserNo(userRepository.getUserNo(user).getUserNo());
         post.setUserName(userRepository.getUserName(user).getUserName());
         postRepository.insert(post);
+    }
+
+    public HashMap<String, String> getPost(User user) {
+        HashMap<String, String> post = new HashMap<>();
+        for (int i = 0; i<this.getPostTitle(user).size(); i++) {
+            String title = this.getPostTitle(user).get(i);
+            String content =this.getPostContent(user).get(i);
+            post.put(title,content );
+        }
+        return post;
+    }
+
+    public List<String> getPostTitle(User user) {
+        return postRepository.getTitle(userRepository.getUserNo(user));
+    }
+
+    public List<String> getPostContent(User user) {
+        return postRepository.getContent(userRepository.getUserNo(user));
     }
 }
