@@ -26,16 +26,10 @@ public class PostServiceImpl implements PostService {
         postRepository.insert(post);
     }
 
-    public HashMap<String, String> getPost(User user) {
-        HashMap<String, String> post = new HashMap<>();
-        for (int i = 0; i < this.getPostTitle(user).size(); i++) {
-            String title = this.getPostTitle(user).get(i);
-            String content = this.getPostContent(user).get(i);
-            post.put(title, content);
-        }
-        Set<String> postSet = post.keySet();
-        Iterator<String> iterator = postSet.iterator();
-
+    public List<String[]> getPost(User user) {
+        List<String[]> post=new ArrayList<>();
+        post.add(this.getPostTitle(user).toArray(new String[3]));
+        post.add(this.getPostContent(user).toArray(new String[3]));
         return post;
     }
 

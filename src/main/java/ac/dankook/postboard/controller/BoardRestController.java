@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
+import java.util.List;
 
 @RestController
 public class BoardRestController {
@@ -19,12 +19,14 @@ public class BoardRestController {
     PostService postService;
 
     @RequestMapping(value = "/rest/board", method = RequestMethod.GET)
-    public HashMap<String, String> recentPostList() {
+    public List<String[]> recentPostList() {
         User user = new User();
         user.setUserId("chd830");
-        HashMap<String,String> hashMap = new HashMap<>();
-        hashMap = postService.getPost(user);
-        return hashMap;
+//        HashMap<String,String> hashMap = new HashMap<>();
+//        hashMap = postService.getPost(user);
+//        return hashMap;
+        List<String[]> post = postService.getPost(user);
+        return post;
     }
 
 }
