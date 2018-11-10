@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 @RestController
 public class BoardRestController {
@@ -19,10 +20,10 @@ public class BoardRestController {
     PostService postService;
 
     @RequestMapping(value = "/rest/board", method = RequestMethod.GET)
-    public HashMap<String, String> recentPostList() {
+    public LinkedHashMap<String, String> recentPostList() {
         User user = new User();
         user.setUserId("chd830");
-        HashMap<String,String> hashMap = new HashMap<>();
+        LinkedHashMap<String,String> hashMap = new LinkedHashMap<>();
         hashMap = postService.getPost(user);
         return hashMap;
     }
