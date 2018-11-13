@@ -57,6 +57,6 @@ public class PostRepositoryImpl implements PostRepository {
     }
 
     public List<Post> selectMainPostByUserId(String userId) {
-        return sqlSession.selectList(MAPPER+".selectMainPostByUserId", userrId);
+        return sqlSession.selectList(MAPPER+".selectMainPostByUserId", userr vcomId);
     }
 }
