@@ -44,4 +44,23 @@ public class PostServiceImpl implements PostService {
     public List<String> getPostContent(User user) {
         return postRepository.getContent(userRepository.getUserNo(user));
     }
+
+
+    public List<Post> getPostListByUserNo(String userNo) {
+        return postRepository.selectListByUserNo(userNo);
+    }
+
+    public List<Post> getMainPostByUserNo(String userNo) {
+        return postRepository.selectMainPostByUserNo(userNo);
+    }
+
+    public List<Post> getMainPostByUserId(String userId) {
+        List<Post> topThreePost = postRepository.selectMainPostByUserId(userId);
+        if (topThreePost == null) {
+            // 자유롭게 처리
+            return null;
+        }
+
+        return topThreePost;
+    }
 }

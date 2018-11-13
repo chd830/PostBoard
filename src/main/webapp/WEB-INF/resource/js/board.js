@@ -46,7 +46,7 @@ signupBtn.onclick = function () {
 // }
 var logoutBtn = document.getElementById("log-out");
 logoutBtn.onclick = function () {
-    document.cookie = "cookie = ";
+    // document.cookie = "cookie = ";
     alert("logout!");
     $('#sign-in').css('visibility', 'visible');
     $('#sign-up').css('visibility', 'visible');

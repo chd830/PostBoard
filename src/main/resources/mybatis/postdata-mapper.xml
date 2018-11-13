@@ -7,10 +7,12 @@
         INSERT INTO posttable(userNo,tagNo,title,content,positive,negative,createDate,updateDate)
         VALUES (#{userNo},2,#{title},#{content},#{positive},#{negative},NOW(),NOW());
     </insert>
+
     <insert id="insertComment">
         INSERT INTO commenttable(postNo,userNo,content,positive,negative, createDate,updateDate)
         VALUES (#{postNo},#{userNo},#{content},#{positive},#{negative},NOW(),NOW())
     </insert>
+
     <select id="selectTitle" resultType="String">
         SELECT title
         FROM posttable
@@ -18,11 +20,33 @@
         ORDER BY postNo
         DESC LIMIT 3;
     </select>
+
     <select id="selectContent" resultType="String">
         SELECT content
         FROM posttable
         WHERE userNo=#{userNo}
         ORDER BY postNo
         DESC LIMIT 3;
+    </select>
+
+    <select id="selectListByUserNo" parameterType="String" resultType="ac.dankook.postboard.data.Post">
+        SELECT *
+        FROM posttable p
+        WHERE p.userNo = #{userNo}
+    </select>
+
+    <select id="selectMainPostByUserNo" parameterType="String" resultType="ac.dankook.postboard.data.Post">
+        SELECT *
+        FROM posttable p
+        WHERE p.userNo = #{userNo}
+        LIMIT 3;
+    </select>
+
+    <select id="selectMainPostByUserId" parameterType="String" resultType="ac.dankook.postboard.data.Post">
+        SELECT *
+        FROM posttable p, usertable u
+        WHERE u.userId = #{userId}
+        AND p.userNo = u.userNo
+        LIMIT 3;
     </select>
 </mapper>

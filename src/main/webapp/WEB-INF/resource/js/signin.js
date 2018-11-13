@@ -16,7 +16,6 @@ document.getElementById("loginBtn").onclick = function () {
         console.dir(check);
 
         if (check === "true") {
-            document.cookie="cookie = "+id;
             location.replace("/");
         }
             else {

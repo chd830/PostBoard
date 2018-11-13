@@ -31,14 +31,21 @@ public class SignInController {
     @RequestMapping(value = "/rest/signin", method = RequestMethod.GET)
     @ResponseBody
     public String logIn(@RequestParam String userId, @RequestParam String userPw, HttpServletResponse response) {
-        Cookie cookie = new Cookie("testcookie",userId);
+        // PW, ID 값 받아서 서비스, 디비(userId -> User)
+
+        JSONObject json = new JSONObject();
+
+        Cookie cookie = new Cookie("restcontroller_cookie", userId);
         cookie.setMaxAge(60*3*1);
         response.addCookie(cookie);
-        JSONObject json = new JSONObject();
+
         User user = new User();
         user.setUserId(userId);
         user.setUserPw(userPw);
+
+        JSONObject json = new JSONObject();
         json.put("result", userService.checkPassword(user));
+
         return json.toJSONString();
     }
 }
