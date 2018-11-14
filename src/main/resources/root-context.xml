@@ -10,9 +10,6 @@
     <context:component-scan base-package="ac.dankook.postboard">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
-    <!--<bean id="TestRestController" class="ac.dankook.postboard.controller.TestRestController"/>-->
-    <!--<bean id="TestRepository" class="ac.dankook.postboard.repository.TestRepositoryImpl" />-->
-    <!--<bean id="TestService" class="ac.dankook.postboard.service.TestServiceImpl" />-->
 
     <context:property-placeholder location="classpath:/properties/*.properties"/>
 

@@ -1,4 +1,8 @@
 'use strict';
+history.pushState(null, null, location.href);
+window.onpopstate = function (event) {
+    history.go(1);
+};
 
 document.getElementById("loginBtn").onclick = function () {
     var id = $('#userId').val();
@@ -17,10 +21,15 @@ document.getElementById("loginBtn").onclick = function () {
 
         if (check === "true") {
             document.cookie="cookie = "+id;
-            location.replace("/");
+            location.replace("/post");
         }
             else {
             alert("wrong password!");
         }
     })
 };
+var signupBtn = document.getElementById("signupBtn");
+signupBtn.onclick = function () {
+    window.open("/signup", "", "width=500px,height=500px");
+    window.focus();
+}

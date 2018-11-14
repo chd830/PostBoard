@@ -1,0 +1,45 @@
+/*!
+ * Start Bootstrap - Small Business (https://startbootstrap.com/template-overviews/small-business)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-small-business/blob/master/LICENSE)
+ */
+
+body {
+    -webkit-background-size: inherit;
+    /*background-image: url("https://cdn.pixabay.com/photo/2017/06/13/13/51/white-2398946_1280.jpg");*/
+    background-image: url('https://images.unsplash.com/photo-1532759627329-f664e1222001?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=537cade15160d9b107efb16a1456bb5d&auto=format&fit=crop&w=1952&q=80');
+}
+#log-out {
+    margin-left:180%;
+    visibility: hidden;
+}
+.row {
+    height: 300px;
+}
+header.carousel {
+    height:30%;
+}
+@media (min-width: 992px) {
+    .img-responsive,
+    .thumbnail>img, thumbnail a>img,
+    .carousel-inner>.item>img,
+    .carousel-inner > .item > img {
+        height: 300px;
+    }
+}
+
+.row {
+    margin-top: 30px;
+}
+
+.py-5 {
+    margin-top: 70px;
+}
+
+.h-100 {
+    height: 350px !important;
+}
+
+#myCarousel {
+    width: 100%;
+}

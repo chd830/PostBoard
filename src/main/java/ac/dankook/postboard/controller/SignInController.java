@@ -23,7 +23,7 @@ public class SignInController {
 
     @RequestMapping(value = "/signin")
     public String signin() {
-        LOGGER.debug("LogInController");
+
         return "signin";
     }
 

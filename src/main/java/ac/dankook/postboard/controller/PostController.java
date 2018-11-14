@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @Controller
 public class PostController {
+<<<<<<< HEAD
     private static final Logger LOGGER = LoggerFactory.getLogger(PostController.class);
 
     @Autowired
@@ -39,6 +40,11 @@ public class PostController {
         post.setPositive(0);
         post.setNegative(0);
         postService.setPost(post,user);
+=======
+    private static Logger LOGGER = LoggerFactory.getLogger(PostController.class);
+    @RequestMapping("/post")
+    public String test() {
+>>>>>>> isolated
         LOGGER.debug("PostController");
     }
 
