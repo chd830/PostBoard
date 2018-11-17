@@ -11,8 +11,4 @@ public class BoardRepositoryImpl implements BoardRepository {
     @Autowired
     private SqlSession sqlSession;
     private static final Logger LOGGER = LoggerFactory.getLogger(BoardRepositoryImpl.class);
-    public void testMybatisRepository() {
-        LOGGER.debug("TestRepositoryImpl");
-        sqlSession.selectOne("testMapper.insertTestData");
-    }
 }

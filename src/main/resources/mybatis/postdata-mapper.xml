@@ -15,14 +15,14 @@
         SELECT title
         FROM posttable
         WHERE userNo=#{userNo}
-        ORDER BY postNo
-        DESC LIMIT 3;
+        ORDER BY updateDate
+        DESC;
     </select>
     <select id="selectContent" resultType="String">
         SELECT content
         FROM posttable
         WHERE userNo=#{userNo}
-        ORDER BY postNo
-        DESC LIMIT 3;
+        ORDER BY updateDate
+        DESC;
     </select>
 </mapper>
