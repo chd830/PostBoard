@@ -9,26 +9,25 @@ $(document).ready(function () {
     $('#log-out').css('visibility', 'hidden');
 
     $.get('/rest/board', {}, function (result) {
-        console.log("result:" + result);
-        var count=0;
-        for (var i = 0; i < result.length; i++)
-            for (var j = 0; j < 3; j++) {
-                if(count===0) $('#h2cardOne').text(result[i][j]);
-                else if(count===1) $('#h2cardTwo').text(result[i][j]);
-                else if(count===2) $('#h2cardThree').text(result[i][j]);
-                else if(count===3) $('#h4cardOne').text(result[i][j]);
-                else if(count===4) $('#h4cardTwo').text(result[i][j]);
-                else $('#h4cardThree').text(result[i][j]);
-                count++;
-                console.log("result:[" + i + "][" + j + "]:" + result[i][j]);
+        var count = 0;
+        for (var key in result) {
+            console.log("key: "+key);
+            console.log("value: "+result[key]);
+            if (count === 0) {
+                $('#h2cardOne').text(key);
+                $('#h4cardOne').text(result[key]);
             }
-
-        //             $('#h2cardOne').text(val);
-        //             $('#h2cardTwo').text(val);
-        //             $('#h2cardThree').text(val);
-        //         $('#h4cardOne').text(val);
-        //         $('#h4cardTwo').text(val);
-        //         $('#h4cardThree').text(val);
+            else if (count === 1) {
+                $('#h2cardTwo').text(key);
+                $('#h4cardTwo').text(result[key]);
+            }
+            else if (count === 2) {
+                $('#h2cardThree').text(key);
+                $('#h4cardThree').text(result[key]);
+            }
+            count++;
+        }
+        result.clear();
     })
 });
 var signinBtn = document.getElementById("sign-in");
