@@ -1,8 +1,4 @@
 'use strict';
-history.pushState(null, null, location.href);
-window.onpopstate = function (event) {
-    history.go(1);
-};
 
 document.getElementById("loginBtn").onclick = function () {
     var id = $('#userId').val();
@@ -20,8 +16,7 @@ document.getElementById("loginBtn").onclick = function () {
         console.dir(check);
 
         if (check === "true") {
-            document.cookie="cookie = "+id;
-            location.replace("/post");
+            location.replace("/");
         }
             else {
             alert("wrong password!");

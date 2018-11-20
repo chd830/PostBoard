@@ -28,8 +28,7 @@ public class PostRepositoryImpl implements PostRepository {
 
     @Override
     public List<Post> selectList(Object criteria) {
-//        return sqlSession.selectList(MAPPER+".select",criteria);
-        return null;
+        return sqlSession.selectList(MAPPER+".select",criteria);
     }
     public List<String> getTitle(User user) {
         return sqlSession.selectList(MAPPER+".selectTitle",user);
@@ -45,5 +44,19 @@ public class PostRepositoryImpl implements PostRepository {
     @Override
     public int delete(Integer entity) {
         return 0;
+    }
+
+
+
+    public List<Post> selectListByUserNo(String userNo) {
+        return sqlSession.selectList(MAPPER+".selectListByUserNo", userNo);
+    }
+
+    public List<Post> selectMainPostByUserNo(String userNo) {
+        return sqlSession.selectList(MAPPER+".selectMainPostByUserNo", userNo);
+    }
+
+    public List<Post> selectMainPostByUserId(String userId) {
+        return sqlSession.selectList(MAPPER+".selectMainPostByUserId", userrId);
     }
 }

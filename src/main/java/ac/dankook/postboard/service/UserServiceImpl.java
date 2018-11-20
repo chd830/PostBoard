@@ -17,6 +17,7 @@ public class UserServiceImpl implements UserService {
     private static Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
 
     public void setSignUpData(User user) {
+
         userRepository.insert(user);
     }
     public String getUserPassword(User user) {
