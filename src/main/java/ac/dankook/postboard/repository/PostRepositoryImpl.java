@@ -11,7 +11,7 @@ import java.util.List;
 
 @Repository
 public class PostRepositoryImpl implements PostRepository {
-    private final static String MAPPER = "postdataMapper";
+    private final static String MAPPER = "postMapper";
 
     @Autowired
     SqlSession sqlSession;

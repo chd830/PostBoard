@@ -7,18 +7,18 @@ document.getElementById("loginBtn").onclick = function () {
         userId: id,
         userPw: pw
     }, function (result) {
-        var check="";
+        var check = "";
         console.dir(result);
         var length = Object.keys(result).length;
-        for(var num=10;num<length-1;num++) {
-            check +=result[num];
+        for (var num = 10; num < length - 1; num++) {
+            check += result[num];
         }
         console.dir(check);
-
+        console.log(result);
         if (check === "true") {
             location.replace("/board");
         }
-            else {
+        else {
             alert("wrong password!");
         }
     })

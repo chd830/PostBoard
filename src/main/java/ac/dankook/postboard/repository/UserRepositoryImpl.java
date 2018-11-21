@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public class UserRepositoryImpl implements UserRepository {
-    private static final String MAPPER = "userdataMapper";
+    private static final String MAPPER = "userMapper";
     @Autowired
     SqlSession sqlSession;
 

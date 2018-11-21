@@ -13,8 +13,6 @@
 <body>
 <div class="login">
     <div class="heading">
-        <form>
-
             <div class="input-group input-group-lg">
                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
                 <input type="text" id="userId" class="form-control" placeholder="Username or email">
@@ -26,7 +24,6 @@
             </div>
             <button id="loginBtn" type="submit" class="float">Login</button>
             <div id="signupBtn">SignUp</div>
-        </form>
     </div>
     <!-- Bootstrap core JavaScript -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
