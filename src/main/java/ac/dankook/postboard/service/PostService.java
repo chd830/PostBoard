@@ -15,7 +15,6 @@ public interface PostService {
 
     List<String> getPostContent(User user);
 
-
     List<Post> getPostListByUserNo(String userNo);
 
     List<Post> getMainPostByUserNo(String userNo);

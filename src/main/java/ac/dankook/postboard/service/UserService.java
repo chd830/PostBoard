@@ -3,7 +3,11 @@ package ac.dankook.postboard.service;
 import ac.dankook.postboard.data.User;
 
 public interface UserService {
-    public void setSignUpData(User user);
-    public String getUserPassword(User user);
-    public boolean checkPassword(User user);
+    void setSignUpData(User user);
+
+    int getUserNo(String userId);
+
+    String getUserPassword(User user);
+
+    boolean checkPassword(User user);
 }

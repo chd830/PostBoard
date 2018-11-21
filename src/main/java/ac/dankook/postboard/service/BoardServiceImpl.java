@@ -8,9 +8,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class BoardServiceImpl implements BoardService {
-    @Autowired
-    private BoardRepository boardRepository;
-
     private static final Logger LOGGER = LoggerFactory.getLogger(BoardServiceImpl.class);
 
+    @Autowired
+    private BoardRepository boardRepository;
 }

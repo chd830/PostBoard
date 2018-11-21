@@ -6,7 +6,6 @@ window.onpopstate = function (event) {
 
 // if (document.cookie != "cookie = ") {
 //     $('#log-out').css('visibility', 'visible');
-}
 var logoutBtn = document.getElementById("log-out");
 logoutBtn.onclick = function () {
     // document.cookie = "cookie = ";

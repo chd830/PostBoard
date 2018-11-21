@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface PostRepository extends BaseRepository<Post, Integer> {
     List<String> getTitle(User user);
+
     List<String> getContent(User user);
 
     List<Post> selectListByUserNo(String userNo);

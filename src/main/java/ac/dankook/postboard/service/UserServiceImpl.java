@@ -7,9 +7,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletResponse;
-
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
@@ -20,20 +17,25 @@ public class UserServiceImpl implements UserService {
 
         userRepository.insert(user);
     }
+
+    public int getUserNo(String userId) {
+        return userRepository.getUserNo(userId).getUserNo();
+    }
+
     public String getUserPassword(User user) {
         return userRepository.getPassword(user).getUserPw();
     }
+
     public boolean checkPassword(User user) {
         String userPw = user.getUserPw();
         String checkPw = this.getUserPassword(user);
-        LOGGER.debug("input password: "+userPw);
+        LOGGER.debug("input password: " + userPw);
         LOGGER.debug(checkPw);
 
-        if(checkPw.equals(userPw)) {
+        if (checkPw.equals(userPw)) {
             LOGGER.debug("true");
             return true;
-        }
-        else {
+        } else {
             LOGGER.debug("false");
             return false;
         }

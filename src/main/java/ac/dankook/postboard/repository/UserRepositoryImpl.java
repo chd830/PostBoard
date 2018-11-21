@@ -13,15 +13,16 @@ public class UserRepositoryImpl implements UserRepository {
     @Autowired
     SqlSession sqlSession;
 
-    public User getUserNo(User user) {
-        return sqlSession.selectOne(MAPPER + ".selectUserNo", user);
+    public User getUserNo(String userId) {
+        return sqlSession.selectOne(MAPPER + ".selectUserNo", userId);
     }
-    public User getUserName(User user) {
-        return sqlSession.selectOne(MAPPER+".selectUserName",this.getUserNo(user).getUserNo());
 
+    public User getUserName(User user) {
+        return sqlSession.selectOne(MAPPER + ".selectUserName", this.getUserNo(user.getUserId()).getUserNo());
     }
+
     public User getPassword(User user) {
-        return this.selectOne(this.getUserNo(user).getUserNo());
+        return this.selectOne(this.getUserNo(user.getUserId()).getUserNo());
     }
 
     @Override
@@ -32,7 +33,6 @@ public class UserRepositoryImpl implements UserRepository {
     @Override
     public User selectOne(Integer integer) {
         return sqlSession.selectOne(MAPPER + ".selectUserPassword", integer);
-
     }
 
     @Override

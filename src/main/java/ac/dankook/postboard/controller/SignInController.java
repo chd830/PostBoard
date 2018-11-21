@@ -30,11 +30,10 @@ public class SignInController {
     @RequestMapping(value = "/rest/signin", method = RequestMethod.GET)
     @ResponseBody
     public String logIn(@RequestParam String userId, @RequestParam String userPw, HttpServletResponse response) {
-        // PW, ID 값 받아서 서비스, 디비(userId -> User)
-
         JSONObject json = new JSONObject();
 
-        Cookie cookie = new Cookie("restcontroller_cookie", userId);
+
+        Cookie cookie = new Cookie("cookie", Integer.toString(userService.getUserNo(userId)));
         cookie.setMaxAge(60*3*1);
         response.addCookie(cookie);
 

@@ -22,27 +22,27 @@ public class PostServiceImpl implements PostService {
     UserRepository userRepository;
 
     public void setPost(Post post, User user) {
-        post.setUserNo(userRepository.getUserNo(user).getUserNo());
+        post.setUserNo(userRepository.getUserNo(user.getUserId()).getUserNo());
         post.setUserName(userRepository.getUserName(user).getUserName());
         postRepository.insert(post);
     }
 
     public LinkedHashMap<String, String> getPost(User user) {
         LinkedHashMap<String, String> post = new LinkedHashMap<>();
-        for (int i = 0; i<this.getPostTitle(user).size(); i++) {
+        for (int i = 0; i < this.getPostTitle(user).size(); i++) {
             String title = this.getPostTitle(user).get(i);
-            String content =this.getPostContent(user).get(i);
-            post.put(title,content );
+            String content = this.getPostContent(user).get(i);
+            post.put(title, content);
         }
         return post;
     }
 
     public List<String> getPostTitle(User user) {
-        return postRepository.getTitle(userRepository.getUserNo(user));
+        return postRepository.getTitle(userRepository.getUserNo(user.getUserId()));
     }
 
     public List<String> getPostContent(User user) {
-        return postRepository.getContent(userRepository.getUserNo(user));
+        return postRepository.getContent(userRepository.getUserNo(user.getUserId()));
     }
 
 
