@@ -13,8 +13,4 @@ public class BoardServiceImpl implements BoardService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(BoardServiceImpl.class);
 
-    public void testMybatisService() {
-        LOGGER.debug("TestServiceImpl");
-        boardRepository.testMybatisRepository();
-    }
 }

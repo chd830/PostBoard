@@ -9,6 +9,6 @@ $('#save').click(function() {
         title: title,
         content: content
     },function() {
-        location.replace("/");
+        location.replace("/board");
     });
 });

@@ -16,7 +16,7 @@ document.getElementById("loginBtn").onclick = function () {
         console.dir(check);
 
         if (check === "true") {
-            location.replace("/");
+            location.replace("/board");
         }
             else {
             alert("wrong password!");

@@ -7,13 +7,13 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 public interface PostService {
-    public void setPost(Post post, User user);
+    void setPost(Post post, User user);
 
-    public LinkedHashMap<String, String> getPost(User user);
+    LinkedHashMap<String, String> getPost(User user);
 
-    public List<String> getPostTitle(User user);
+    List<String> getPostTitle(User user);
 
-    public List<String> getPostContent(User user);
+    List<String> getPostContent(User user);
 
 
     List<Post> getPostListByUserNo(String userNo);

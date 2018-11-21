@@ -21,9 +21,8 @@ public class SignInController {
     @Autowired
     UserService userService;
 
-    @RequestMapping(value = "/signin")
+    @RequestMapping(value = "/")
     public String signin() {
-
         return "signin";
     }
 
@@ -43,7 +42,6 @@ public class SignInController {
         user.setUserId(userId);
         user.setUserPw(userPw);
 
-        JSONObject json = new JSONObject();
         json.put("result", userService.checkPassword(user));
 
         return json.toJSONString();

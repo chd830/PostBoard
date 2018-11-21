@@ -6,8 +6,8 @@ import ac.dankook.postboard.data.User;
 import java.util.List;
 
 public interface PostRepository extends BaseRepository<Post, Integer> {
-    public List<String> getTitle(User user);
-    public List<String> getContent(User user);
+    List<String> getTitle(User user);
+    List<String> getContent(User user);
 
     List<Post> selectListByUserNo(String userNo);
 

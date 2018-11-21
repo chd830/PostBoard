@@ -12,6 +12,7 @@ import java.util.List;
 @Repository
 public class PostRepositoryImpl implements PostRepository {
     private final static String MAPPER = "postdataMapper";
+
     @Autowired
     SqlSession sqlSession;
 
@@ -57,6 +58,6 @@ public class PostRepositoryImpl implements PostRepository {
     }
 
     public List<Post> selectMainPostByUserId(String userId) {
-        return sqlSession.selectList(MAPPER+".selectMainPostByUserId", userr vcomId);
+        return sqlSession.selectList(MAPPER+".selectMainPostByUserId", userId);
     }
 }
