@@ -25,5 +25,6 @@ $(document).ready(function() {
     })
 });
 $('#log-out').click(function() {
+    document.cookie = "cookie=";
     location.replace("/");
 })

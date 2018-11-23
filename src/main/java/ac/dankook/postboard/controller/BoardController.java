@@ -24,8 +24,10 @@ public class BoardController {
     PostService postService;
 
     @RequestMapping("/board")
-    public String board(Model model) {
+    public String board() {
         LOGGER.debug("PostController");
+        SignInController signInController = new SignInController();
+        signInController.check = false;
 //        model.addAttribute("topPost", postService.asdkfljsdlf());
         return "board";
     }

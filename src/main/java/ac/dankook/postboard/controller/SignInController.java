@@ -14,20 +14,45 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.util.CookieGenerator;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Controller
 public class SignInController {
     private static Logger LOGGER = LoggerFactory.getLogger(SignInController.class);
+    public static boolean check=true;
     @Autowired
     UserService userService;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String signin(HttpServletResponse response) {
-//        Cookie resetCookie = new Cookie("cookie", null); // choiceCookieName(쿠키 이름)에 대한 값을 null로 지정
-//        resetCookie.setMaxAge(0); // 유효시간을 0으로 설정
-//        response.addCookie(resetCookie); // 응답 헤더에 추가해서 없어지도록 함
-        return "signin";
+    public String signin(HttpServletResponse response, HttpServletRequest request) {
+        String userNo = "";
+
+        if(check) {
+            Cookie resetCookie = new Cookie("cookie", null); // choiceCookieName(쿠키 이름)에 대한 값을 null로 지정
+            resetCookie.setMaxAge(0); // 유효시간을 0으로 설정
+            response.addCookie(resetCookie); // 응답 헤더에 추가해서 없어지도록 함
+        }
+        else {
+            Cookie[] cookies = request.getCookies();
+            if (cookies != null) {
+                for (Cookie cookie : cookies)
+                    if ("cookie".equals(cookie.getName()))
+                        userNo = cookie.getValue();
+            }
+        }
+
+        if("".equals(userNo)) {
+            check = true;
+        }
+        else check = false;
+        if (check) {
+            return "signin";
+        }
+        else {
+            BoardController boardController = new BoardController();
+            return boardController.board();
+        }
     }
 
     @SuppressWarnings("unchecked")
