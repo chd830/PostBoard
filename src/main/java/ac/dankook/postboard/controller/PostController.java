@@ -33,13 +33,12 @@ public class PostController {
     @RequestMapping(value = "/rest/write", method = RequestMethod.GET)
     public void writePost(@RequestParam String title, @RequestParam String content, HttpServletRequest request) {
         LOGGER.debug("PostController");
-
         String userNo = "";
-        Cookie[] cookie = request.getCookies();
-        if (cookie != null) {
-            for (int i = 0; i < cookie.length; i++)
-                if ("cookie".equals(cookie[i].getName()))
-                    userNo = cookie[i].getValue();
+        Cookie[] cookies = request.getCookies();
+        if (cookies != null) {
+            for (Cookie cookie : cookies)
+                if ("cookie".equals(cookie.getName()))
+                    userNo = cookie.getValue();
         }
 
         Post post = new Post();

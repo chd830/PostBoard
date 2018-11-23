@@ -1,7 +1,5 @@
 'use strict';
-$(document).ready(function() {
 
-})
 $('#loginBtn').click(function () {
     var id = $('#userId').val();
     var pw = $('#userPassword').val();
@@ -15,7 +13,6 @@ $('#loginBtn').click(function () {
             check += result[num];
         }
         if (check === "true") {
-            document.cookie = "loginSuccess";
             location.replace("/board");
         }
         else {
@@ -23,7 +20,7 @@ $('#loginBtn').click(function () {
         }
     })
 });
-$('#signupbtn').click(function() {
+$('#signupbtn').click(function () {
     window.open("/signup", "", "width=500px,height=500px");
     window.focus();
 });

@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="http://googledrive.com/host/0B-QKv6rUoIcGeHd6VV9JczlHUjg"></script><!-- holder.js link -->
     <link type="text/css" rel="stylesheet" href="/resources/css/board.css"/>
 
 </head>
@@ -29,7 +28,10 @@
         </button>g
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li> logout </li>
+                <li class="nav-item">
+                <li id="log-out">
+                    <a class="nav-link" href="#">LogOut</a>
+                </li>
             </ul>
         </div>
     </div>

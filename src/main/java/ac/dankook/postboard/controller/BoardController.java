@@ -1,7 +1,6 @@
 package ac.dankook.postboard.controller;
 
 import ac.dankook.postboard.data.Post;
-import ac.dankook.postboard.data.User;
 import ac.dankook.postboard.service.PostService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,11 +34,11 @@ public class BoardController {
     @RequestMapping(value = "/rest/board", method = RequestMethod.GET)
     public List<Post> recentPostList(HttpServletRequest request) {
         String userNo = "";
-        Cookie[] cookie = request.getCookies();
-        if (cookie != null) {
-            for (int i = 0; i < cookie.length; i++)
-                if ("cookie".equals(cookie[i].getName()))
-                    userNo = cookie[i].getValue();
+        Cookie[] cookies = request.getCookies();
+        if (cookies != null) {
+            for (Cookie cookie : cookies)
+                if ("cookie".equals(cookie.getName()))
+                    userNo = cookie.getValue();
         }
         return postService.getMainPostByUserNo(userNo);
     }
