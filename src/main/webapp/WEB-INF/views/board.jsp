@@ -26,26 +26,10 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>
+        </button>g
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-                <li id="log-out">
-                    <a class="nav-link" href="#">LogOut</a>
-                </li>
+                <li> logout </li>
             </ul>
         </div>
     </div>
@@ -115,7 +99,8 @@
         <div class="col-md-4 mb-4">
             <div class="card h-100">
                 <div id="cardOne" class="card-body">
-                    <h2 class="card-title">Card One</h2>
+                    <h2 class="cardOneTitle">Card title</h2>
+                    <h4 class="cardOneContent">card content</h4>
                 </div>
             </div>
         </div>
@@ -123,7 +108,8 @@
         <div class="col-md-4 mb-4">
             <div class="card h-100">
                 <div class="card-body">
-                    <h2 class="card-title">Card Two</h2>
+                    <h2 class="cardTwoTitle">Card title</h2>
+                    <h4 class="cardTwoContent">card content</h4>
                 </div>
             </div>
         </div>
@@ -131,7 +117,8 @@
         <div class="col-md-4 mb-4">
             <div class="card h-100">
                 <div class="card-body">
-                    <h2 class="card-title">Card Three</h2>
+                    <h2 class="cardThreeTitle">Card title</h2>
+                    <h4 class="cardThreeContent">card content</h4>
                 </div>
             </div>
             <!-- /.col-md-4 -->

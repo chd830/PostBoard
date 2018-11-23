@@ -10,5 +10,5 @@ import org.springframework.stereotype.Repository;
 public class BoardRepositoryImpl implements BoardRepository {
     @Autowired
     private SqlSession sqlSession;
-    private static final Logger LOGGER = LoggerFactory.getLogger(BoardRepositoryImpl.class);
+    private static final Logger LOGGER   = LoggerFactory.getLogger(BoardRepositoryImpl.class);
 }

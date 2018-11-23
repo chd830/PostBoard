@@ -1,5 +1,5 @@
 'use strict';
-document.getElementById("signupbtn").onclick = function () {
+$('#signupbtn').click(function() {
     var userId = $('#id').val();
     var username = $('#username').val();
     var email = $('#email').val();
@@ -16,7 +16,7 @@ document.getElementById("signupbtn").onclick = function () {
         });
         window.close();
     }
-}
-document.getElementById("cancelbtn").onclick = function() {
-    window.close();
-}
+});
+$('#cancelbtn').click(function() {
+        window.close();
+});

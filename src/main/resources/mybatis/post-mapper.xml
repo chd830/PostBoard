@@ -39,6 +39,7 @@
         SELECT *
         FROM posttable p
         WHERE p.userNo = #{userNo}
+        ORDER BY p.postNo DESC
         LIMIT 3;
     </select>
 

@@ -5,7 +5,7 @@ import ac.dankook.postboard.data.User;
 public interface UserRepository extends BaseRepository<User, Integer> {
     User getUserNo(String userId);
 
-    User getUserName(User user);
+    User getUserName(int userNo);
 
     User getPassword(User user);
 }

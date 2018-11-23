@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.util.CookieGenerator;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
@@ -30,17 +31,15 @@ public class SignInController {
     @RequestMapping(value = "/rest/signin", method = RequestMethod.GET)
     @ResponseBody
     public String logIn(@RequestParam String userId, @RequestParam String userPw, HttpServletResponse response) {
-        JSONObject json = new JSONObject();
 
-
-        Cookie cookie = new Cookie("cookie", Integer.toString(userService.getUserNo(userId)));
-        cookie.setMaxAge(60*3*1);
-        response.addCookie(cookie);
+        CookieGenerator cookie = new CookieGenerator();
+        cookie.setCookieName("cookie");
+        cookie.addCookie(response,Integer.toString(userService.getUserNo(userId)));
 
         User user = new User();
         user.setUserId(userId);
         user.setUserPw(userPw);
-
+        JSONObject json = new JSONObject();
         json.put("result", userService.checkPassword(user));
 
         return json.toJSONString();

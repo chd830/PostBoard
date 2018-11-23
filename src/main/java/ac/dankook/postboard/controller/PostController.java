@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.HttpServerErrorException;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Controller
@@ -30,16 +31,25 @@ public class PostController {
 
     @ResponseBody
     @RequestMapping(value = "/rest/write", method = RequestMethod.GET)
-    public void writePost(@RequestParam String title, @RequestParam String content, HttpServletResponse response) {
-        User user = new User();
-        user.setUserId("chd830");
+    public void writePost(@RequestParam String title, @RequestParam String content, HttpServletRequest request) {
+        LOGGER.debug("PostController");
+
+        String userNo = "";
+        Cookie[] cookie = request.getCookies();
+        if (cookie != null) {
+            for (int i = 0; i < cookie.length; i++)
+                if ("cookie".equals(cookie[i].getName()))
+                    userNo = cookie[i].getValue();
+        }
+
         Post post = new Post();
+        post.setUserNo(Integer.parseInt(userNo));
         post.setTitle(title);
         post.setContent(content);
         post.setPositive(0);
         post.setNegative(0);
-        postService.setPost(post,user);
-        LOGGER.debug("PostController");
+
+        postService.setPost(post);
     }
 
 
