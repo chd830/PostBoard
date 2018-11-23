@@ -20,13 +20,17 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 public class PostController {
     private static final Logger LOGGER = LoggerFactory.getLogger(PostController.class);
+    public static boolean check=false;
 
     @Autowired
     PostService postService;
 
     @RequestMapping("/write")
     public String postboard() {
-        return "writepost";
+        if(check)
+            return "writepost";
+        else
+            return "signin";
     }
 
     @ResponseBody

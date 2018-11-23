@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.util.CookieGenerator;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -20,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 public class SignInController {
     private static Logger LOGGER = LoggerFactory.getLogger(SignInController.class);
-    public static boolean check=true;
+    public static boolean check = true;
     @Autowired
     UserService userService;
 
@@ -28,12 +27,11 @@ public class SignInController {
     public String signin(HttpServletResponse response, HttpServletRequest request) {
         String userNo = "";
 
-        if(check) {
+        if (check) {
             Cookie resetCookie = new Cookie("cookie", null); // choiceCookieName(쿠키 이름)에 대한 값을 null로 지정
             resetCookie.setMaxAge(0); // 유효시간을 0으로 설정
             response.addCookie(resetCookie); // 응답 헤더에 추가해서 없어지도록 함
-        }
-        else {
+        } else {
             Cookie[] cookies = request.getCookies();
             if (cookies != null) {
                 for (Cookie cookie : cookies)
@@ -42,14 +40,12 @@ public class SignInController {
             }
         }
 
-        if("".equals(userNo)) {
+        if ("".equals(userNo)) {
             check = true;
-        }
-        else check = false;
+        } else check = false;
         if (check) {
             return "signin";
-        }
-        else {
+        } else {
             BoardController boardController = new BoardController();
             return boardController.board();
         }
@@ -60,9 +56,19 @@ public class SignInController {
     @ResponseBody
     public String logIn(@RequestParam String userId, @RequestParam String userPw, HttpServletResponse response) {
 
-        CookieGenerator cookie = new CookieGenerator();
-        cookie.setCookieName("cookie");
-        cookie.addCookie(response, Integer.toString(userService.getUserNo(userId)));
+//        CookieGenerator cookie = new CookieGenerator();
+//        cookie.setCookieName("cookie");
+//        cookie.addCookie(response, Integer.toString(userService.getUserNo(userId)));
+
+        Cookie cookie = new Cookie("cookie", Integer.toString(userService.getUserNo(userId)));
+        cookie.setMaxAge(60 * 60 * 1);
+        response.addCookie(cookie);
+
+        PostController postController = new PostController();
+        postController.check = true;
+
+        BoardController boardController = new BoardController();
+        boardController.check = true;
 
         User user = new User();
         user.setUserId(userId);
