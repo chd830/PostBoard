@@ -17,6 +17,7 @@ $('#loginBtn').click(function () {
         }
         else if (check === "") {
             alert("wrong id!");
+
         }
         else {
             alert("wrong password!");

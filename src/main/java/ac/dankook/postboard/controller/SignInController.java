@@ -61,6 +61,7 @@ public class SignInController {
 
         Cookie cookie = new Cookie("cookie", Integer.toString(userService.getUserNo(userId)));
         cookie.setMaxAge(60 * 60 * 1);
+        cookie.setPath("/");
         response.addCookie(cookie);
 
         PostController postController = new PostController();
