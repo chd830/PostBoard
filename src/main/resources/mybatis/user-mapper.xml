@@ -22,4 +22,5 @@
         FROM usertable
         WHERE userNo=#{userNo};
     </select>
+
 </mapper>

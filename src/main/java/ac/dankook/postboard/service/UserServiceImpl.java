@@ -18,7 +18,10 @@ public class UserServiceImpl implements UserService {
     }
 
     public int getUserNo(String userId) {
-        return userRepository.getUserNo(userId).getUserNo();
+        if(null != userRepository.getUserNo(userId))
+            return userRepository.getUserNo(userId).getUserNo();
+        else
+            return 0;
     }
 
     public String getUserPassword(User user) {

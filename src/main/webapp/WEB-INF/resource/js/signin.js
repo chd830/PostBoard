@@ -15,6 +15,9 @@ $('#loginBtn').click(function () {
         if (check === "true") {
             location.replace("/board");
         }
+        else if (check === "") {
+            alert("wrong id!");
+        }
         else {
             alert("wrong password!");
         }

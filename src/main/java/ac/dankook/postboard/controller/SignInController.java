@@ -56,9 +56,8 @@ public class SignInController {
     @ResponseBody
     public String logIn(@RequestParam String userId, @RequestParam String userPw, HttpServletResponse response) {
 
-//        CookieGenerator cookie = new CookieGenerator();
-//        cookie.setCookieName("cookie");
-//        cookie.addCookie(response, Integer.toString(userService.getUserNo(userId)));
+        if(userService.getUserNo(userId) == 0)
+            return "";
 
         Cookie cookie = new Cookie("cookie", Integer.toString(userService.getUserNo(userId)));
         cookie.setMaxAge(60 * 60 * 1);
@@ -73,6 +72,7 @@ public class SignInController {
         User user = new User();
         user.setUserId(userId);
         user.setUserPw(userPw);
+
         JSONObject json = new JSONObject();
         json.put("result", userService.checkPassword(user));
         return json.toJSONString();

@@ -14,7 +14,11 @@ public class UserRepositoryImpl implements UserRepository {
     SqlSession sqlSession;
 
     public User getUserNo(String userId) {
-        return sqlSession.selectOne(MAPPER + ".selectUserNo", userId);
+        User user = sqlSession.selectOne(MAPPER + ".selectUserNo", userId);
+        if(user!=null)
+            return user;
+        else
+            return null;
     }
 
     public User getUserName(int userNo) {
@@ -22,7 +26,8 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     public User getPassword(User user) {
-        return this.selectOne(this.getUserNo(user.getUserId()).getUserNo());
+        User user1 = this.selectOne(this.getUserNo(user.getUserId()).getUserNo());
+        return user1;
     }
 
     @Override
