@@ -6,6 +6,9 @@ window.onpopstate = function (event) {
 $('#writeBtn').click(function() {
     location.replace('/write');
 });
+$('#cardOne').click(function() {
+    location.replace('/post');
+});
 $(document).ready(function() {
     console.log(document.cookie);
     $.get('/rest/board',function(result) {

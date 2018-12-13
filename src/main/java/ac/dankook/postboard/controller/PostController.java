@@ -25,6 +25,10 @@ public class PostController {
     @Autowired
     PostService postService;
 
+    @RequestMapping("/post")
+    public String post() {
+        return "post";
+    }
     @RequestMapping("/write")
     public String postboard() {
         if(check)
