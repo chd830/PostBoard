@@ -24,7 +24,10 @@ public class PostServiceImpl implements PostService {
         post.setUserName(userRepository.getUserName(post.getUserNo()).getUserName());
         postRepository.insert(post);
     }
-
+    public List<Post> getPostNameByUserNo(String userNo) {
+        List<Post> postList = postRepository.selectPostListByUserNo(userNo);
+        return postList;
+    }
     public List<Post> getMainPostByUserNo(String userNo) {
         List<Post> postList = postRepository.selectPostListByUserNo(userNo);
         List<Post> topThreePost = new ArrayList<>();

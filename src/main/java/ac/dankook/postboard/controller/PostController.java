@@ -21,13 +21,17 @@ import javax.servlet.http.HttpServletResponse;
 public class PostController {
     private static final Logger LOGGER = LoggerFactory.getLogger(PostController.class);
     public static boolean check=false;
-
+    public static String userNo;
     @Autowired
     PostService postService;
 
     @RequestMapping("/post")
     public String post() {
         return "post";
+    }
+    @RequestMapping("/postlist")
+    public String postList() {
+        return "postlist";
     }
     @RequestMapping("/write")
     public String postboard() {
@@ -36,12 +40,16 @@ public class PostController {
         else
             return "signin";
     }
+//    @ResponseBody
+//    @RequestMapping(value="rest/post",method=RequestMethod.GET)
+//    public Post post() {
+//        postService.
+//    }
 
     @ResponseBody
     @RequestMapping(value = "/rest/write", method = RequestMethod.GET)
     public void writePost(@RequestParam String title, @RequestParam String content, HttpServletRequest request) {
         LOGGER.debug("PostController");
-        String userNo = "";
         Cookie[] cookies = request.getCookies();
         if (cookies != null) {
             for (Cookie cookie : cookies)

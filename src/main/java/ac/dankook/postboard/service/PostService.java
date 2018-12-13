@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface PostService {
     void setPost(Post post);
-
+    List<Post> getPostNameByUserNo(String userNo);
     List<Post> getMainPostByUserNo(String userNo);
 }
