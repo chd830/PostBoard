@@ -3,7 +3,7 @@
 $('#loginBtn').click(function () {
     var id = $('#userId').val();
     var pw = $('#userPassword').val();
-    $.get('/rest/signin', {
+    $.get('/signin/rest', {
         userId: id,
         userPw: pw
     }, function (result) {

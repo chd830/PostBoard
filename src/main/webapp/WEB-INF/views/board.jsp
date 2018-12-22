@@ -109,7 +109,7 @@
         <!-- /.col-md-4 -->
         <div class="col-md-4 mb-4">
             <div class="card h-100">
-                <div class="card-body">
+                <div id="cardTwo" class="card-body">
                     <h2 class="cardTwoTitle">Card title</h2>
                     <h4 class="cardTwoContent">card content</h4>
                 </div>
@@ -118,7 +118,7 @@
         <!-- /.col-md-4 -->
         <div class="col-md-4 mb-4">
             <div class="card h-100">
-                <div class="card-body">
+                <div id="cardThree" class="card-body">
                     <h2 class="cardThreeTitle">Card title</h2>
                     <h4 class="cardThreeContent">card content</h4>
                 </div>

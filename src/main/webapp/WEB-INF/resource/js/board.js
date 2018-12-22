@@ -4,11 +4,17 @@ window.onpopstate = function (event) {
     history.go(1);
 };
 $('#writeBtn').click(function() {
-    location.replace('/write');
+    location.replace('/post/write');
 });
 $('#cardOne').click(function() {
     location.replace('/post');
 });
+$('#cardTwo').click(function() {
+    location.replace('/post');
+})
+$('#cardThree').click(function() {
+    location.replace('/post');
+})
 $(document).ready(function() {
     console.log(document.cookie);
     $.get('/rest/board',function(result) {
@@ -29,5 +35,5 @@ $(document).ready(function() {
 });
 $('#log-out').click(function() {
     document.cookie = "cookie=";
-    location.replace("/");
+    location.replace("/signin");
 })

@@ -1,8 +1,11 @@
 package ac.dankook.postboard.controller;
 
+import ac.dankook.postboard.constants.UrlConstants;
 import ac.dankook.postboard.data.Post;
 import ac.dankook.postboard.data.User;
 import ac.dankook.postboard.service.PostService;
+import ac.dankook.postboard.utils.HttpUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,53 +21,44 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Controller
+@RequestMapping(UrlConstants.POST)
 public class PostController {
     private static final Logger LOGGER = LoggerFactory.getLogger(PostController.class);
-    public static boolean check=false;
-    public static String userNo;
+
     @Autowired
     PostService postService;
 
-    @RequestMapping("/post")
+    @RequestMapping()
     public String post() {
         return "post";
     }
+
     @RequestMapping("/postlist")
     public String postList() {
         return "postlist";
     }
+
     @RequestMapping("/write")
     public String postboard() {
-        if(check)
             return "writepost";
-        else
-            return "signin";
     }
-//    @ResponseBody
-//    @RequestMapping(value="rest/post",method=RequestMethod.GET)
-//    public Post post() {
-//        postService.
-//    }
 
     @ResponseBody
     @RequestMapping(value = "/rest/write", method = RequestMethod.GET)
     public void writePost(@RequestParam String title, @RequestParam String content, HttpServletRequest request) {
         LOGGER.debug("PostController");
-        Cookie[] cookies = request.getCookies();
-        if (cookies != null) {
-            for (Cookie cookie : cookies)
-                if ("cookie".equals(cookie.getName()))
-                    userNo = cookie.getValue();
+        String userNo = HttpUtils.getUserNoFromCookie(request);
+
+        if (StringUtils.isNotBlank(userNo)) {
+            Post post = new Post();
+            post.setUserNo(Integer.parseInt(userNo));
+            post.setTitle(title);
+            post.setContent(content);
+            post.setPositive(0);
+            post.setNegative(0);
+
+            postService.setPost(post);
         }
-
-        Post post = new Post();
-        post.setUserNo(Integer.parseInt(userNo));
-        post.setTitle(title);
-        post.setContent(content);
-        post.setPositive(0);
-        post.setNegative(0);
-
-        postService.setPost(post);
     }
 
 

@@ -30,6 +30,9 @@
         <json-simple.version>1.1.1</json-simple.version>
         <jackson-databind.version>2.9.6</jackson-databind.version>
         <guava.version>27.0-jre</guava.version>
+        <spring-security-web.version>4.2.2.RELEASE</spring-security-web.version>
+        <spring-security-config.version>4.2.2.RELEASE</spring-security-config.version>
+        <commons-lang3.version>3.5</commons-lang3.version>
     </properties>
 
     <dependencies>
@@ -109,11 +112,26 @@
         </dependency>
 
         <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>${guava.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${spring-security-web.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${spring-security-config.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
