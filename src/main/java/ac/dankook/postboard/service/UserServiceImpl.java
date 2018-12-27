@@ -9,16 +9,18 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserServiceImpl implements UserService {
+    private static Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
+
     @Autowired
     UserRepository userRepository;
-    private static Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
+
 
     public void setSignUpData(User user) {
         userRepository.insert(user);
     }
 
     public int getUserNo(String userId) {
-        if(null != userRepository.getUserNo(userId))
+        if (null != userRepository.getUserNo(userId))
             return userRepository.getUserNo(userId).getUserNo();
         else
             return 0;

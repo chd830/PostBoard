@@ -1,7 +1,6 @@
 package ac.dankook.postboard.repository;
 
 import ac.dankook.postboard.data.Post;
-import ac.dankook.postboard.data.User;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -17,7 +16,9 @@ public class PostRepositoryImpl implements PostRepository {
 
 
     @Override
-    public Post insert(Post entity) { return sqlSession.selectOne(MAPPER + ".insertPost", entity); }
+    public Post insert(Post entity) {
+        return sqlSession.selectOne(MAPPER + ".insertPost", entity);
+    }
 
     @Override
     public Post selectOne(Integer integer) {

@@ -15,10 +15,11 @@ public class UserRepositoryImpl implements UserRepository {
 
     public User getUserNo(String userId) {
         User user = sqlSession.selectOne(MAPPER + ".selectUserNo", userId);
-        if(user!=null)
+        if (user != null) {
             return user;
-        else
+        } else {
             return null;
+        }
     }
 
     public User getUserName(int userNo) {

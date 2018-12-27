@@ -17,6 +17,7 @@ public class PostServiceImpl implements PostService {
 
     @Autowired
     PostRepository postRepository;
+
     @Autowired
     UserRepository userRepository;
 
@@ -24,25 +25,32 @@ public class PostServiceImpl implements PostService {
         post.setUserName(userRepository.getUserName(post.getUserNo()).getUserName());
         postRepository.insert(post);
     }
+
     public List<Post> getPostNameByUserNo(String userNo) {
         List<Post> postList = postRepository.selectPostListByUserNo(userNo);
         return postList;
     }
+
     public List<Post> getMainPostByUserNo(String userNo) {
         List<Post> postList = postRepository.selectPostListByUserNo(userNo);
         List<Post> topThreePost = new ArrayList<>();
-        int size=postList.size();
-        if (postList.size() < 3)
-            for (int i = size; i >0; i--)
-                topThreePost.add(postList.get(i-1));
-        else {
-            for (int i = size - 1; i > postList.size() - 4; i--)
-                topThreePost.add(postList.get(i));
+        int size = postList.size();
+        if (postList.size() < 3) {
+            for (int i = size; i > 0; i--) {
+                topThreePost.add(postList.get(i - 1));
+            }
         }
-        if (postList != null)
+        else {
+            for (int i = size - 1; i > postList.size() - 4; i--) {
+                topThreePost.add(postList.get(i));
+            }
+        }
+        if (postList != null) {
             return topThreePost;
-        else
+        }
+        else {
             return null;
+        }
     }
 
 }
