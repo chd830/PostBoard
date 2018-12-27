@@ -40,7 +40,7 @@ public class PostController {
 
     @RequestMapping("/write")
     public String postboard() {
-            return "writepost";
+        return "writepost";
     }
 
     @ResponseBody
@@ -50,6 +50,7 @@ public class PostController {
         String userNo = HttpUtils.getUserNoFromCookie(request);
 
         if (StringUtils.isNotBlank(userNo)) {
+
             Post post = new Post();
             post.setUserNo(Integer.parseInt(userNo));
             post.setTitle(title);

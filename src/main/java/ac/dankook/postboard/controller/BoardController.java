@@ -24,13 +24,16 @@ public class BoardController {
     PostService postService;
 
     @RequestMapping("/board")
-    public String board() {
+    public String board(HttpServletRequest request) {
         LOGGER.debug("PostController");
-//        model.addAttribute("topPost", postService.asdkffljsdlf());
-            return "board";
-    }
 
-//    /rest/board?userNo=123
+        String userNo = HttpUtils.getUserNoFromCookie(request);
+        if(StringUtils.isNotBlank(userNo)) {
+            return "board";
+        }
+        else
+            return "redirect:/signin";
+    }
 
     @ResponseBody
     @RequestMapping(value = "/rest/board", method = RequestMethod.GET)

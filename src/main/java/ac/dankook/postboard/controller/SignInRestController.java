@@ -1,8 +1,9 @@
 package ac.dankook.postboard.controller;
 
-import ac.dankook.postboard.constants.HttpConstants;
 import ac.dankook.postboard.data.User;
 import ac.dankook.postboard.service.UserService;
+import ac.dankook.postboard.utils.HttpUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 
 @RestController
@@ -22,14 +22,12 @@ public class SignInRestController {
     @SuppressWarnings("unchecked")
     @RequestMapping(value = "/signin/rest", method = RequestMethod.GET)
     public String logIn(@RequestParam String userId, @RequestParam String userPw, HttpServletResponse response) {
-
-        if (userService.getUserNo(userId) == 0)
+        String userNo = Integer.toString(userService.getUserNo(userId));
+        if(StringUtils.isBlank(userNo)) {
             return "";
+        }
 
-        Cookie cookie = new Cookie(HttpConstants.COOKIE_NAME, Integer.toString(userService.getUserNo(userId)));
-        cookie.setMaxAge(60 * 60 * 1);
-        cookie.setPath("/");
-        response.addCookie(cookie);
+        response.addCookie(HttpUtils.setCookie(userNo));
 
         User user = new User();
         user.setUserId(userId);
