@@ -36,5 +36,5 @@ $(document).ready(function() {
 });
 $('#log-out').click(function() {
     document.cookie = "cookie=";
-    location.replace("/signin");
+    location.replace("/");
 })

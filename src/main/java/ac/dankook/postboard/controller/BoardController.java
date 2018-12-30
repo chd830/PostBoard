@@ -32,7 +32,7 @@ public class BoardController {
             return "board";
         }
         else
-            return "redirect:/signin";
+            return "redirect:/";
     }
 
     @ResponseBody
