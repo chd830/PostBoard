@@ -24,7 +24,7 @@ public class SignInController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String signin(HttpServletRequest request, HttpServletResponse response) {
-//        response.addCookie(HttpUtils.deleteCookieByCookieName(request));
+        response.addCookie(HttpUtils.deleteCookieByCookieName(request));
         String userNo = HttpUtils.getUserNoFromCookie(request);
         if (StringUtils.isNotBlank(userNo)) {
             return "redirect:/board";

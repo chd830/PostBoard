@@ -43,24 +43,7 @@ public class PostController {
         return "writepost";
     }
 
-    @ResponseBody
-    @RequestMapping(value = "/rest/write", method = RequestMethod.GET)
-    public void writePost(@RequestParam String title, @RequestParam String content, HttpServletRequest request) {
-        LOGGER.debug("PostController");
-        String userNo = HttpUtils.getUserNoFromCookie(request);
 
-        if (StringUtils.isNotBlank(userNo)) {
-
-            Post post = new Post();
-            post.setUserNo(Integer.parseInt(userNo));
-            post.setTitle(title);
-            post.setContent(content);
-            post.setPositive(0);
-            post.setNegative(0);
-
-            postService.setPost(post);
-        }
-    }
 
 
 }
