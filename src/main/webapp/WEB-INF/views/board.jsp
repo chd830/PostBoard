@@ -100,27 +100,27 @@
     <div class="row">
         <div class="col-md-4 mb-4">
             <div class="card h-100">
-                <div id="cardOne" class="card-body">
-                    <h2 class="cardOneTitle">Card title</h2>
-                    <h4 class="cardOneContent">card content</h4>
+                <div class="card-body">
+                    <h2 class="post">Card title</h2>
+                    <h4 class="post">card content</h4>
                 </div>
             </div>
         </div>
         <!-- /.col-md-4 -->
         <div class="col-md-4 mb-4">
             <div class="card h-100">
-                <div id="cardTwo" class="card-body">
-                    <h2 class="cardTwoTitle">Card title</h2>
-                    <h4 class="cardTwoContent">card content</h4>
+                <div class="card-body">
+                    <h2 class="post">Card title</h2>
+                    <h4 class="post">card content</h4>
                 </div>
             </div>
         </div>
         <!-- /.col-md-4 -->
         <div class="col-md-4 mb-4">
             <div class="card h-100">
-                <div id="cardThree" class="card-body">
-                    <h2 class="cardThreeTitle">Card title</h2>
-                    <h4 class="cardThreeContent">card content</h4>
+                <div class="card-body">
+                    <h2 class="post">Card title</h2>
+                    <h4 class="post">card content</h4>
                 </div>
             </div>
             <!-- /.col-md-4 -->

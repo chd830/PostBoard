@@ -1,6 +1,7 @@
 package ac.dankook.postboard.utils;
 
 import ac.dankook.postboard.constants.HttpConstants;
+import ac.dankook.postboard.data.User;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;

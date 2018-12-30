@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Controller
-@RequestMapping("/signin")
+@RequestMapping("/")
 public class SignInController {
     private static Logger LOGGER = LoggerFactory.getLogger(SignInController.class);
 
