@@ -29,7 +29,6 @@ $(document).ready(function() {
                 console.log(index+" : "+$(this).text());
                 $(this).text(result[count].content);
                 count+=1;
-
             }
         })
     })
