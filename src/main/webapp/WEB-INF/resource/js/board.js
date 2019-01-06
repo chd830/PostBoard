@@ -8,21 +8,28 @@ $('#writeBtn').click(function() {
     location.replace('/post/write_post');
 });
 
-$('.card-body').click(function() {
-    location.replace('/post');
-});
-
 $(document).ready(function() {
     var count = 0;
     $.get('/rest/board',function(result) {
         $('.post').each(function(index) {
+            // console.dir(result);
+            var title = result[count].title;
+            var content = result[count].content;
+
+            $(this).click(function() {
+                location.replace('/post');
+            })
             if(index%2 == 0 ) {
-                $(this).text(result[count].title);
+                $(this).text(title);
+
             }
             else if(index%2 == 1) {
-                $(this).text(result[count].content);
+                $(this).text(content);
+                ind[count] = index;
+                console.log(index);
                 count+=1;
             }
+            sessionStorage.post = JSON.stringify({result: [result]});
         })
     })
 });
