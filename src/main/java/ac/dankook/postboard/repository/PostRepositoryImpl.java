@@ -44,5 +44,7 @@ public class PostRepositoryImpl implements PostRepository {
     public List<Post> selectPostListByUserNo(String userNo) {
         return sqlSession.selectList(MAPPER + ".selectListByUserNo", userNo);
     }
-
+    public int selectPostListNumber(String userNo) {
+        return sqlSession.selectOne(MAPPER + ".selectPostListNumber", userNo);
+    }
 }

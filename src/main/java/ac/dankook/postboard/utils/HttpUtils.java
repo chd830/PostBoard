@@ -1,10 +1,11 @@
 package ac.dankook.postboard.utils;
 
 import ac.dankook.postboard.constants.HttpConstants;
-import ac.dankook.postboard.data.User;
+import ac.dankook.postboard.data.Post;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import java.util.*;
 
 public class HttpUtils {
 
@@ -40,4 +41,5 @@ public class HttpUtils {
         cookie.setMaxAge(0);
         return cookie;
     }
+
 }

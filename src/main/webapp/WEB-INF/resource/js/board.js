@@ -5,7 +5,7 @@ window.onpopstate = function (event) {
 };
 
 $('#writeBtn').click(function() {
-    location.replace('/post/write');
+    location.replace('/post/write_post');
 });
 
 $('.card-body').click(function() {

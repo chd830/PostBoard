@@ -33,12 +33,12 @@ public class PostController {
         return "post";
     }
 
-    @RequestMapping("/postlist")
+    @RequestMapping("/post_list")
     public String postList() {
         return "postlist";
     }
 
-    @RequestMapping("/write")
+    @RequestMapping("/write_post")
     public String postboard() {
         return "writepost";
     }

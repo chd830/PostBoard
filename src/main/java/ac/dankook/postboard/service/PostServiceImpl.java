@@ -30,6 +30,9 @@ public class PostServiceImpl implements PostService {
         List<Post> postList = postRepository.selectPostListByUserNo(userNo);
         return postList;
     }
+    public int getPostListNumber(String userNo) {
+        return postRepository.selectPostListNumber(userNo);
+    }
 
     public List<Post> getMainPostByUserNo(String userNo) {
         List<Post> postList = postRepository.selectPostListByUserNo(userNo);

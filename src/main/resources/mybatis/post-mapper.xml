@@ -50,4 +50,9 @@
         AND p.userNo = u.userNo
         LIMIT 3;
     </select>
+    <select id="selectPostListNumber" parameterType="int">
+      SELECT count(*)
+      FROM posttable
+      WHERE userNo = #{userNo};
+    </select>
 </mapper>
