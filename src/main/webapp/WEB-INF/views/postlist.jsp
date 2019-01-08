@@ -25,9 +25,9 @@
 <body>
     <div id="post-list">
         <ol>
-            <li id="one">1</li>
-            <li id="two">2</li>
-            <li>3</li>
+            <li class="list">1</li>
+            <li class="list">2</li>
+            <li class="list">3</li>
         </ol>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
