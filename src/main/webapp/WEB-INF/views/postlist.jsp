@@ -32,7 +32,7 @@
         <tbody>
         <c:choose>
             <c:when test="${fn:length(list) > 0 }">
-                <c:forEach items="${list }" var="list">
+                <c:forEach items="${list}" var="list">
                     <tr>
                         <th scope="row">${list.tagNo }</th>
                         <td>${list.title }</td>

@@ -43,13 +43,6 @@
         LIMIT 3;
     </select>
 
-    <select id="selectMainPostByUserId" parameterType="String" resultType="ac.dankook.postboard.data.Post">
-        SELECT *
-        FROM posttable p, usertable u
-        WHERE u.userId = #{userId}
-        AND p.userNo = u.userNo
-        LIMIT 3;
-    </select>
     <select id="selectPostListNumber" parameterType="int">
       SELECT count(*)
       FROM posttable

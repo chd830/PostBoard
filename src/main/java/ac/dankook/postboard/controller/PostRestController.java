@@ -43,7 +43,7 @@ public class PostRestController {
     public List<Post> postList(HttpServletRequest request) {
         String userNo = HttpUtils.getUserNoFromCookie(request);
         if(StringUtils.isNotBlank(userNo)) {
-            return postService.getPostNameByUserNo(userNo);
+            return postService.getPostByUserNo(userNo);
         }
         else
             return null;

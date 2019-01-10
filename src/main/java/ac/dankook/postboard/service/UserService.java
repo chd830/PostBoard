@@ -10,4 +10,6 @@ public interface UserService {
     String getUserPassword(User user);
 
     boolean checkPassword(User user);
+
+    User getUserInformation(String userNo);
 }

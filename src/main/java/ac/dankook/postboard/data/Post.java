@@ -1,5 +1,7 @@
 package ac.dankook.postboard.data;
 
+import java.util.Date;
+
 public class Post {
     int userNo;
     int tagNo;
@@ -7,10 +9,14 @@ public class Post {
     String content;
     int userId;
     String userName;
+    Date updateDate;
+
+
     int positive;
     int negative;
 
     public int getUserNo() {
+
         return userNo;
     }
 
@@ -72,5 +78,13 @@ public class Post {
 
     public void setNegative(int negative) {
         this.negative = negative;
+    }
+
+    public Date getUpdateDate() {
+        return updateDate;
+    }
+
+    public void setUpdateDate(Date updateDate) {
+        this.updateDate = updateDate;
     }
 }

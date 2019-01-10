@@ -44,4 +44,10 @@ public class UserServiceImpl implements UserService {
             return false;
         }
     }
+
+    public User getUserInformation(String userNo) {
+        User user = userRepository.getUserNo(userNo);
+        if(user != null) return user;
+        else return null;
+    }
 }
