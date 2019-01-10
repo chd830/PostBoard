@@ -5,6 +5,8 @@
   Time: 오전 2:41
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -23,17 +25,38 @@
 
 </head>
 <body>
-    <div id="post-list">
-        <ol>
-            <li class="list">1</li>
-            <li class="list">2</li>
-            <li class="list">3</li>
-        </ol>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
-    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
-    <script src="/resources/js/postlist.js"></script>
+<div class="container">
+    <table class="table">
+        ...
+        </thead>
+        <tbody>
+        <c:choose>
+            <c:when test="${fn:length(list) > 0 }">
+                <c:forEach items="${list }" var="list">
+                    <tr>
+                        <th scope="row">${list.tagNo }</th>
+                        <td>${list.title }</td>
+                        <td>${list.userName }</td>
+                        <%--<td>${list.CREA_DATE }</td>--%>
+                        <%--<td>${list.HIT_CNT }</td>--%>
+                    </tr>
+                </c:forEach>
+            </c:when>
+            <c:otherwise>
+                <tr>
+                    <td colspan="5">조회된 결과가 없습니다.</td>
+                </tr>
+            </c:otherwise>
+        </c:choose>
+
+        </tbody>
+    </table>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script src="/resources/js/postlist.js"></script>
 </body>
 </html>
