@@ -30,8 +30,10 @@ public class PostListController {
         ModelAndView modelAndView = new ModelAndView("postlist");
 
         List<Post> list = this.getList(request);
-        User user = userService.getUserInformation(HttpUtils.getUserNoFromCookie(request));
+        String userName = userService.getUserName(HttpUtils.getUserNoFromCookie(request));
+
         modelAndView.addObject("list",list);
+        modelAndView.addObject("user",userName);
 
         return modelAndView;
     }
@@ -41,11 +43,6 @@ public class PostListController {
         list = postService.getPostByUserNo(HttpUtils.getUserNoFromCookie(request));
         if (!list.isEmpty()) return list;
         else return null;
-    }
-    public Post getUserInformation(HttpServletRequest request) {
-        Post post = new Post();
-
-
     }
 
     public boolean nextPage(HttpServletRequest request) {

@@ -32,8 +32,8 @@ public class UserRepositoryImpl implements UserRepository {
         return user1;
     }
 
-    public User getUserInformation(String userNo) {
-        User user = sqlSession.selectOne(MAPPER + ".selectUserInformationByUserNo",userNo);
+    public User getUserName(String userNo) {
+        User user = sqlSession.selectOne(MAPPER + ".selectUserNameByUserNo",userNo);
         return user;
     }
 

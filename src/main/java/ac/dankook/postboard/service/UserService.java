@@ -11,5 +11,5 @@ public interface UserService {
 
     boolean checkPassword(User user);
 
-    User getUserInformation(String userNo);
+    String getUserName(String userNo);
 }

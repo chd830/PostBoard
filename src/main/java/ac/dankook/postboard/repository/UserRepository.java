@@ -9,5 +9,5 @@ public interface UserRepository extends BaseRepository<User, Integer> {
 
     User getPassword(User user);
 
-    User getUserInformation(String userNo);
+    User getUserName(String userNo);
 }

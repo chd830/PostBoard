@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -27,7 +27,6 @@
 <body>
 <div class="container">
     <table class="table">
-        ...
         </thead>
         <tbody>
         <c:choose>
@@ -36,10 +35,11 @@
                     <tr>
                         <th scope="row">${list.tagNo }</th>
                         <td>${list.title }</td>
-                        <td>${list.userName }</td>
-                        <%--<td>${list.CREA_DATE }</td>--%>
-                        <%--<td>${list.HIT_CNT }</td>--%>
+                        <td>${user}</td>
+                        <td>${list.updateDate}</td>
                     </tr>
+
+
                 </c:forEach>
             </c:when>
             <c:otherwise>

@@ -17,8 +17,8 @@
         FROM usertable
         WHERE userNo=#{userNo};
     </select>
-    <select id="selectUserInformationByUserNo" resultType="ac.dankook.postboard.data.User">
-        SELECT *
+    <select id="selectUserNameByUserNo" resultType="ac.dankook.postboard.data.User">
+        SELECT userName
         FROM usertable
         WHERE userNo=#{userNo};
     </select>

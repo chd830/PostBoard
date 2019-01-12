@@ -45,9 +45,9 @@ public class UserServiceImpl implements UserService {
         }
     }
 
-    public User getUserInformation(String userNo) {
-        User user = userRepository.getUserNo(userNo);
-        if(user != null) return user;
+    public String getUserName(String userNo) {
+        User user = userRepository.getUserName(userNo);
+        if(user != null) return user.getUserName();
         else return null;
     }
 }
