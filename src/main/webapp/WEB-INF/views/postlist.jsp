@@ -31,15 +31,18 @@
         <tbody>
         <c:choose>
             <c:when test="${fn:length(list) > 0 }">
+                <c:set var="num" value="1"/>
+                <%
+                    int num = 1;
+                %>
                 <c:forEach items="${list}" var="list">
                     <tr>
-                        <th scope="row">${list.tagNo }</th>
+                        <th scope="row"><%= num++ %>
+                        </th>
                         <td>${list.title }</td>
                         <td>${user}</td>
                         <td>${list.updateDate}</td>
                     </tr>
-
-
                 </c:forEach>
             </c:when>
             <c:otherwise>
