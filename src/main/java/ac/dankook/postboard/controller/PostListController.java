@@ -1,10 +1,10 @@
 package ac.dankook.postboard.controller;
 
 import ac.dankook.postboard.data.Post;
-import ac.dankook.postboard.data.User;
 import ac.dankook.postboard.service.PostService;
 import ac.dankook.postboard.service.UserService;
 import ac.dankook.postboard.utils.HttpUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,16 +26,22 @@ public class PostListController {
     UserService userService;
 
     @RequestMapping(value = "/post/post_list")
-    public ModelAndView postList(HttpServletRequest request) {
-        ModelAndView modelAndView = new ModelAndView("postlist");
+    public Object postList(HttpServletRequest request) {
+        String userNo = HttpUtils.getUserNoFromCookie(request);
+        if (StringUtils.isNotBlank(userNo)) {
+            ModelAndView modelAndView = new ModelAndView("postlist");
 
-        List<Post> list = this.getList(request);
-        String userName = userService.getUserName(HttpUtils.getUserNoFromCookie(request));
+            List<Post> list = this.getList(request);
 
-        modelAndView.addObject("list",list);
-        modelAndView.addObject("user",userName);
+            String userName = userService.getUserName(userNo);
 
-        return modelAndView;
+            modelAndView.addObject("list", list);
+            modelAndView.addObject("user", userName);
+
+            return modelAndView;
+        }
+        else
+            return "redirect:/";
     }
 
     public List<Post> getList(HttpServletRequest request) {
@@ -47,10 +53,9 @@ public class PostListController {
 
     public boolean nextPage(HttpServletRequest request) {
         int postCount = postService.getPostListNumber(HttpUtils.getUserNoFromCookie(request));
-        if(postCount > 10) {
+        if (postCount > 10) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
 

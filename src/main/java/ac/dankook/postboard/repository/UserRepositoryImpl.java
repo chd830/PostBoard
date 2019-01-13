@@ -24,7 +24,7 @@ public class UserRepositoryImpl implements UserRepository {
 
     public User getUserName(int userNo) {
 
-        return sqlSession.selectOne(MAPPER + ".selectUserName", userNo);
+        return sqlSession.selectOne(MAPPER + ".selectUserNameByUserNo", userNo);
     }
 
     public User getPassword(User user) {
