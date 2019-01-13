@@ -1,4 +1,5 @@
-<%--
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.SimpleDateFormat" %><%--
   Created by IntelliJ IDEA.
   User: chd96
   Date: 2018-12-14
@@ -31,7 +32,6 @@
         <tbody>
         <c:choose>
             <c:when test="${fn:length(list) > 0 }">
-                <c:set var="num" value="1"/>
                 <%
                     int num = 1;
                 %>

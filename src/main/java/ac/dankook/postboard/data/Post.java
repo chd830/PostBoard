@@ -1,5 +1,6 @@
 package ac.dankook.postboard.data;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Post {
@@ -80,11 +81,14 @@ public class Post {
         this.negative = negative;
     }
 
-    public Date getUpdateDate() {
-        return updateDate;
+    public String getUpdateDate() {
+        SimpleDateFormat simple = new SimpleDateFormat("yyyy.mm.dd");
+        return simple.format(updateDate);
     }
 
     public void setUpdateDate(Date updateDate) {
+        SimpleDateFormat simple = new SimpleDateFormat("yyyy.mm.dd");
+        simple.format(updateDate);
         this.updateDate = updateDate;
     }
 }
