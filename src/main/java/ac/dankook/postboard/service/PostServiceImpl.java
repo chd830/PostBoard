@@ -31,10 +31,6 @@ public class PostServiceImpl implements PostService {
         return postList;
     }
 
-    public int getPostListNumber(String userNo) {
-        return postRepository.selectPostListNumber(userNo);
-    }
-
     public List<Post> getMainPostByUserNo(String userNo) {
         List<Post> postList = postRepository.selectPostListByUserNo(userNo);
         List<Post> topThreePost = new ArrayList<>();
@@ -43,18 +39,23 @@ public class PostServiceImpl implements PostService {
             for (int i = size; i > 0; i--) {
                 topThreePost.add(postList.get(i - 1));
             }
-        }
-        else {
+        } else {
             for (int i = size - 1; i > postList.size() - 4; i--) {
                 topThreePost.add(postList.get(i));
             }
         }
         if (postList != null) {
             return topThreePost;
-        }
-        else {
+        } else {
             return null;
         }
+    }
+
+    public List<Post> getList(String userNo) {
+        List<Post> list = new ArrayList<>();
+        list = getPostByUserNo(userNo);
+        if (!list.isEmpty()) return list;
+        else return null;
     }
 
 }

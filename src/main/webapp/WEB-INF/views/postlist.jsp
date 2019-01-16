@@ -1,11 +1,12 @@
-<%--
+<%@ page import="ac.dankook.postboard.data.Post" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: chd96
   Date: 2018-12-14
   Time: 오전 2:41
   To change this template use File | Settings | File Templates.
 --%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -21,7 +22,7 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <%--<link type="text/css" rel="stylesheet" href="/resources/css/postlist.css"/>--%>
+    <link type="text/css" rel="stylesheet" href="/resources/css/postlist.css"/>
 
 </head>
 <body>
@@ -30,11 +31,12 @@
         </thead>
         <tbody>
         <c:choose>
-            <%
-                int num = 1;
-            %>
             <c:when test="${fn:length(list) > 0 }">
-                <c:forEach items="${list}" var="list" begin="0" end="9">
+                <%
+                    int num = 1;
+                    List<Post> postList = (List) request.getAttribute("list");
+                %>
+                <c:forEach items="${list}" var="list" begin="0" end="14">
                     <tr>
                         <th scope="row"><%= num++ %>
                         </th>
@@ -44,17 +46,6 @@
                     </tr>
                 </c:forEach>
             </c:when>
-            <%--<c:when test="${fn:length(list) >10}">--%>
-                <%--<c:forEach items="${list}" var="list" begin="10" end="19">--%>
-                    <%--<tr>--%>
-                        <%--<th scope="row"><%= num++ %>--%>
-                        <%--</th>--%>
-                        <%--<td>${list.title }</td>--%>
-                        <%--<td>${user}</td>--%>
-                        <%--<td>${list.updateDate}</td>--%>
-                    <%--</tr>--%>
-                <%--</c:forEach>--%>
-            <%--</c:when>--%>
             <c:otherwise>
                 <tr>
                     <td colspan="5">조회된 결과가 없습니다.</td>
