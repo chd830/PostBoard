@@ -14,4 +14,6 @@ public interface PostService {
     List<Post> getMainPostByUserNo(String userNo);
 
     List<Post> getList(String userNo);
+
+    int getListCountNumber(String userNo);
 }

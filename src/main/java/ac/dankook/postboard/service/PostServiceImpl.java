@@ -58,4 +58,7 @@ public class PostServiceImpl implements PostService {
         else return null;
     }
 
+    public int getListCountNumber(String userNo) {
+        return postRepository.selectPostListNumber(userNo);
+    }
 }
