@@ -34,7 +34,7 @@
             <c:when test="${fn:length(list) > 0 }">
                 <%
                     int num = 1;
-                    List<Post> postList = (List) request.getAttribute("list");
+                    int next = 0;
                 %>
                 <c:forEach items="${list}" var="list" begin="0" end="14">
                     <tr>
@@ -42,9 +42,11 @@
                         </th>
                         <td>${list.title }</td>
                         <td>${user}</td>
-                        <td>${list.updateDate}</td>
+                        <td id="last">${list.updateDate}</td>
                     </tr>
                 </c:forEach>
+                <input type="hidden" id="end" value="<%=num%>"/>
+                <input type="hidden" id="next" value="<%=next%>"/>
             </c:when>
             <c:otherwise>
                 <tr>

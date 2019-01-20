@@ -10,7 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -25,6 +24,7 @@ public class SignInController {
     @RequestMapping(method = RequestMethod.GET)
     public String signin(HttpServletRequest request, HttpServletResponse response) {
         response.addCookie(HttpUtils.deleteCookieByCookieName(request));
+
         String userNo = HttpUtils.getUserNoFromCookie(request);
         if (StringUtils.isNotBlank(userNo)) {
             return "redirect:/board";

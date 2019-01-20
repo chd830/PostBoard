@@ -23,23 +23,19 @@ public class PostController {
     @RequestMapping()
     public String post(HttpServletRequest request) {
         String userNo = HttpUtils.getUserNoFromCookie(request);
-        if(StringUtils.isNotBlank(userNo)) {
+        if (StringUtils.isNotBlank(userNo)) {
             return "post";
         }
-        else {
-            return "redirect:/";
-        }
+        return "redirect:/";
     }
 
     @RequestMapping("/write_post")
     public String postboard(HttpServletRequest request) {
         String userNo = HttpUtils.getUserNoFromCookie(request);
-        if(StringUtils.isNotBlank(userNo)) {
+        if (StringUtils.isNotBlank(userNo)) {
             return "writepost";
         }
-        else {
-            return "redirect:/";
-        }
+        return "redirect:/";
     }
 
 

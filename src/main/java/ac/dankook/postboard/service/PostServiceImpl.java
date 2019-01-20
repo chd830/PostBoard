@@ -44,18 +44,21 @@ public class PostServiceImpl implements PostService {
                 topThreePost.add(postList.get(i));
             }
         }
+
         if (postList != null) {
             return topThreePost;
-        } else {
-            return null;
         }
+        return null;
     }
 
     public List<Post> getList(String userNo) {
         List<Post> list = new ArrayList<>();
         list = getPostByUserNo(userNo);
         if (!list.isEmpty()) return list;
-        else return null;
+        return null;
     }
 
+    public int getListCountNumber(String userNo) {
+        return postRepository.selectPostListNumber(userNo);
+    }
 }

@@ -22,8 +22,7 @@ public class UserServiceImpl implements UserService {
     public int getUserNo(String userId) {
         if (null != userRepository.getUserNo(userId))
             return userRepository.getUserNo(userId).getUserNo();
-        else
-            return 0;
+        return 0;
     }
 
     public String getUserPassword(User user) {
@@ -39,15 +38,14 @@ public class UserServiceImpl implements UserService {
         if (checkPw.equals(userPw)) {
             LOGGER.debug("true");
             return true;
-        } else {
-            LOGGER.debug("false");
-            return false;
         }
+        LOGGER.debug("false");
+        return false;
     }
 
     public String getUserName(String userNo) {
         User user = userRepository.getUserName(userNo);
-        if(user != null) return user.getUserName();
-        else return null;
+        if (user != null) return user.getUserName();
+        return null;
     }
 }

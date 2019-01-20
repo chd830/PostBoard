@@ -1,6 +1,7 @@
 package ac.dankook.postboard.data;
 
-import java.text.SimpleDateFormat;
+import ac.dankook.postboard.utils.HttpUtils;
+
 import java.util.Date;
 
 public class Post {
@@ -11,13 +12,10 @@ public class Post {
     int userId;
     String userName;
     Date updateDate;
-
-
     int positive;
     int negative;
 
     public int getUserNo() {
-
         return userNo;
     }
 
@@ -82,13 +80,10 @@ public class Post {
     }
 
     public String getUpdateDate() {
-        SimpleDateFormat simple = new SimpleDateFormat("yyyy.mm.dd");
-        return simple.format(updateDate);
+        return HttpUtils.changeDateToSimpleDateFormat(updateDate);
     }
 
     public void setUpdateDate(Date updateDate) {
-        SimpleDateFormat simple = new SimpleDateFormat("yyyy.mm.dd");
-        simple.format(updateDate);
         this.updateDate = updateDate;
     }
 }

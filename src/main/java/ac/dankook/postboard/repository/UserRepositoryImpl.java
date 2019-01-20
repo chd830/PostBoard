@@ -17,13 +17,11 @@ public class UserRepositoryImpl implements UserRepository {
         User user = sqlSession.selectOne(MAPPER + ".selectUserNo", userId);
         if (user != null) {
             return user;
-        } else {
-            return null;
         }
+        return null;
     }
 
     public User getUserName(int userNo) {
-
         return sqlSession.selectOne(MAPPER + ".selectUserNameByUserNo", userNo);
     }
 
@@ -33,7 +31,7 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     public User getUserName(String userNo) {
-        User user = sqlSession.selectOne(MAPPER + ".selectUserNameByUserNo",userNo);
+        User user = sqlSession.selectOne(MAPPER + ".selectUserNameByUserNo", userNo);
         return user;
     }
 

@@ -24,9 +24,9 @@ public class SignUpController {
     }
 
     @ResponseBody
-    @RequestMapping(value="/rest/signup",method= RequestMethod.POST)
-    public void setUserData(@RequestParam String userId,@RequestParam String userPw,@RequestParam String userName,@RequestParam String email) {
-        User user= new User();
+    @RequestMapping(value = "/rest/signup", method = RequestMethod.POST)
+    public void setUserData(@RequestParam String userId, @RequestParam String userPw, @RequestParam String userName, @RequestParam String email) {
+        User user = new User();
         user.setUserId(userId);
         user.setUserPw(userPw);
         user.setUserName(userName);

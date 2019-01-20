@@ -2,9 +2,11 @@ package ac.dankook.postboard.utils;
 
 import ac.dankook.postboard.constants.HttpConstants;
 import ac.dankook.postboard.data.Post;
+import sun.java2d.pipe.SpanShapeRenderer;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class HttpUtils {
@@ -40,6 +42,11 @@ public class HttpUtils {
         Cookie cookie = new Cookie("cookie", null);
         cookie.setMaxAge(0);
         return cookie;
+    }
+
+    public static String changeDateToSimpleDateFormat(Date date) {
+        SimpleDateFormat simple = new SimpleDateFormat("yyyy.mm.dd");
+        return simple.format(date);
     }
 
 }

@@ -9,11 +9,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class PostListController {
@@ -21,6 +23,7 @@ public class PostListController {
 
     @Autowired
     PostService postService;
+
     @Autowired
     UserService userService;
 
@@ -28,18 +31,51 @@ public class PostListController {
     public Object postList(HttpServletRequest request) {
         String userNo = HttpUtils.getUserNoFromCookie(request);
         if (StringUtils.isNotBlank(userNo)) {
-            ModelAndView modelAndView = new ModelAndView();
+            Model model = new Model() {
+                @Override
+                public Model addAttribute(String s, Object o) {
+                    return null;
+                }
+
+                @Override
+                public Model addAttribute(Object o) {
+                    return null;
+                }
+
+                @Override
+                public Model addAllAttributes(Collection<?> collection) {
+                    return null;
+                }
+
+                @Override
+                public Model addAllAttributes(Map<String, ?> map) {
+                    return null;
+                }
+
+                @Override
+                public Model mergeAttributes(Map<String, ?> map) {
+                    return null;
+                }
+
+                @Override
+                public boolean containsAttribute(String s) {
+                    return false;
+                }
+
+                @Override
+                public Map<String, Object> asMap() {
+                    return null;
+                }
+            };
 
             List<Post> list = postService.getList(userNo);
 
             String userName = userService.getUserName(userNo);
-            modelAndView.setViewName("postlist");
-            modelAndView.addObject("list", list);
-            modelAndView.addObject("user", userName);
+            model.addAttribute("list", list);
+            model.addAttribute("user", userName);
 
-            return modelAndView;
-        } else {
-            return "redirect:/";
+            return model;
         }
+        return "redirect:/";
     }
 }

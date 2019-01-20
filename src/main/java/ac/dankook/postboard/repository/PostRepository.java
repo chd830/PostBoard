@@ -6,5 +6,6 @@ import java.util.List;
 
 public interface PostRepository extends BaseRepository<Post, Integer> {
     List<Post> selectPostListByUserNo(String userNo);
+
     int selectPostListNumber(String userNo);
 }

@@ -14,7 +14,6 @@ public class PostRepositoryImpl implements PostRepository {
     @Autowired
     SqlSession sqlSession;
 
-
     @Override
     public Post insert(Post entity) {
         return sqlSession.selectOne(MAPPER + ".insertPost", entity);
@@ -44,6 +43,7 @@ public class PostRepositoryImpl implements PostRepository {
     public List<Post> selectPostListByUserNo(String userNo) {
         return sqlSession.selectList(MAPPER + ".selectListByUserNo", userNo);
     }
+
     public int selectPostListNumber(String userNo) {
         return sqlSession.selectOne(MAPPER + ".selectPostListNumber", userNo);
     }
