@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 public class SignInRestController {
 
     @Autowired
-    UserService userService;
+    private UserService userService;
 
     @SuppressWarnings("unchecked")
     @RequestMapping(value = "/signin/rest", method = RequestMethod.GET)

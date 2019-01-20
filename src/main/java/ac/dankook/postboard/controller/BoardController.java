@@ -21,10 +21,10 @@ import java.util.List;
 
 @Controller
 public class BoardController {
-    private static Logger LOGGER = LoggerFactory.getLogger(BoardController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(BoardController.class);
 
     @Autowired
-    PostService postService;
+    private PostService postService;
 
     @RequestMapping("/board")
     public String board(HttpServletRequest request) {

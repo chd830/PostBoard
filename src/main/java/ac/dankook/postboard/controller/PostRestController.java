@@ -20,7 +20,7 @@ public class PostRestController {
     private static final Logger LOGGER = LoggerFactory.getLogger(PostRestController.class);
 
     @Autowired
-    PostService postService;
+    private PostService postService;
 
     @RequestMapping(value = "/post/write", method = RequestMethod.GET)
     public void writePost(@RequestParam String title, @RequestParam String content, HttpServletRequest request) {

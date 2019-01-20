@@ -13,9 +13,10 @@ import javax.servlet.http.HttpServletRequest;
 public class PostListRestController {
 
     @Autowired
-    PostService postService;
+    private PostService postService;
+
     @Autowired
-    UserService userService;
+    private UserService userService;
 
     @RequestMapping(value = "rest/postlist")
     public String getList(HttpServletRequest request) {

@@ -22,10 +22,10 @@ public class PostListController {
     private static final Logger LOGGER = LoggerFactory.getLogger(PostListController.class);
 
     @Autowired
-    PostService postService;
+    private PostService postService;
 
     @Autowired
-    UserService userService;
+    private UserService userService;
 
     @RequestMapping(value = "/post/post_list")
     public Object postList(HttpServletRequest request) {

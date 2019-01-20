@@ -18,7 +18,7 @@ public class PostController {
     private static final Logger LOGGER = LoggerFactory.getLogger(PostController.class);
 
     @Autowired
-    PostService postService;
+    private PostService postService;
 
     @RequestMapping()
     public String post(HttpServletRequest request) {

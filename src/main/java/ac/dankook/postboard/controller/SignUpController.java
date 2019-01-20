@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class SignUpController {
-    private static Logger LOGGER = LoggerFactory.getLogger(SignUpController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(SignUpController.class);
 
     @Autowired
-    UserService userService;
+    private UserService userService;
 
     @RequestMapping("/signup")
     public String signup() {

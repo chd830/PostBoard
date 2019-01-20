@@ -16,10 +16,10 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 @RequestMapping("/")
 public class SignInController {
-    private static Logger LOGGER = LoggerFactory.getLogger(SignInController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(SignInController.class);
 
     @Autowired
-    UserService userService;
+    private UserService userService;
 
     @RequestMapping(method = RequestMethod.GET)
     public String signin(HttpServletRequest request, HttpServletResponse response) {
