@@ -28,7 +28,7 @@ public class PostController {
 
     @Autowired
     private UserService userService;
-    
+
     @RequestMapping()
     public String post(HttpServletRequest request) {
         String userNo = HttpUtils.getUserNoFromCookie(request);
@@ -47,7 +47,7 @@ public class PostController {
         return "redirect:/";
     }
     @RequestMapping(value = "/post_list")
-    public Object postList(HttpServletRequest request) {
+    public String postList(HttpServletRequest request) {
         String userNo = HttpUtils.getUserNoFromCookie(request);
         if (StringUtils.isNotBlank(userNo)) {
             Model model = new Model() {
@@ -93,7 +93,7 @@ public class PostController {
             model.addAttribute("list", list);
             model.addAttribute("user", userName);
 
-            return model;
+            return "postlist";
         }
         return "redirect:/";
     }
