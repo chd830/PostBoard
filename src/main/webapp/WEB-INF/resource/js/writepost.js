@@ -4,7 +4,7 @@
 $('#save').click(function() {
     var title = $('#title').val();
     var content = $('#content').val();
-    $.get('/post/write', {
+    $.get('/rest/write', {
         // userId: window.cookie,
         title: title,
         content: content

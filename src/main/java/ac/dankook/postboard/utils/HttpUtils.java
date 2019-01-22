@@ -1,13 +1,11 @@
 package ac.dankook.postboard.utils;
 
 import ac.dankook.postboard.constants.HttpConstants;
-import ac.dankook.postboard.data.Post;
-import sun.java2d.pipe.SpanShapeRenderer;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Date;
 
 public class HttpUtils {
 

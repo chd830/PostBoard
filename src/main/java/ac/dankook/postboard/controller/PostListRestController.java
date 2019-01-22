@@ -18,10 +18,6 @@ public class PostListRestController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "rest/postlist")
-    public String getList(HttpServletRequest request) {
-        String userNo = HttpUtils.getUserNoFromCookie(request);
-        return "";
-    }
+
 
 }
