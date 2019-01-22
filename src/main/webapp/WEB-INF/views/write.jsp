@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link type="text/css" rel="stylesheet" href="/resources/css/writepost.css"/>
+    <link type="text/css" rel="stylesheet" href="/resources/css/write.css"/>
 
 </head>
 
@@ -43,6 +43,6 @@
     </form>
 </table>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="/resources/js/writepost.js"></script>
+<script src="/resources/js/write.js"></script>
 </body>
 </html>

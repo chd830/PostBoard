@@ -38,15 +38,15 @@ public class PostController {
         return "redirect:/";
     }
 
-    @RequestMapping("/write_post")
+    @RequestMapping("/write")
     public String postboard(HttpServletRequest request) {
         String userNo = HttpUtils.getUserNoFromCookie(request);
         if (StringUtils.isNotBlank(userNo)) {
-            return "writepost";
+            return "write";
         }
         return "redirect:/";
     }
-    @RequestMapping(value = "/post_list")
+    @RequestMapping(value = "/list")
     public String postList(HttpServletRequest request) {
         String userNo = HttpUtils.getUserNoFromCookie(request);
         if (StringUtils.isNotBlank(userNo)) {
@@ -93,7 +93,7 @@ public class PostController {
             model.addAttribute("list", list);
             model.addAttribute("user", userName);
 
-            return "postlist";
+            return "list";
         }
         return "redirect:/";
     }

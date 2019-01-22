@@ -20,7 +20,7 @@
     <!-- Bootstrap core CSS -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <link type="text/css" rel="stylesheet" href="/resources/css/postlist.css"/>
+    <link type="text/css" rel="stylesheet" href="/resources/css/list.css"/>
 
 </head>
 <body>
@@ -58,6 +58,6 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="/resources/js/postlist.js"></script>
+<script src="/resources/js/list.js"></script>
 </body>
 </html>

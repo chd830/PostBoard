@@ -50,7 +50,7 @@ public class PostRestController {
         return null;
     }
 
-    @RequestMapping(value = "/postlist")
+    @RequestMapping(value = "/list")
     public String getList(HttpServletRequest request) {
         String userNo = HttpUtils.getUserNoFromCookie(request);
         return "";
