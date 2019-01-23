@@ -25,7 +25,7 @@ public class PostRestController {
     private PostService postService;
 
     @RequestMapping(value = "/write", method = RequestMethod.GET)
-    public void writePost(@RequestParam String title, @RequestParam String content, HttpServletRequest request) {
+    public boolean writePost(@RequestParam String title, @RequestParam String content, HttpServletRequest request) {
         String userNo = HttpUtils.getUserNoFromCookie(request);
 
         if (StringUtils.isNotBlank(userNo)) {
@@ -38,7 +38,9 @@ public class PostRestController {
             post.setNegative(0);
 
             postService.setPost(post);
+            return true;
         }
+        return false;
     }
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)

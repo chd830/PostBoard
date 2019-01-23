@@ -46,6 +46,7 @@ public class PostController {
         }
         return "redirect:/";
     }
+
     @RequestMapping(value = "/list")
     public String postList(HttpServletRequest request) {
         String userNo = HttpUtils.getUserNoFromCookie(request);

@@ -1,14 +1,19 @@
 'use strict'
 
 
-$('#save').click(function() {
+$('#save').click(function () {
     var title = $('#title').val();
     var content = $('#content').val();
     $.get('/rest/write', {
-        // userId: window.cookie,
         title: title,
         content: content
-    },function() {
+    }, function (result) {
+        if (!result) {
+            alert("Registration Failed");
+        }
+        else {
+            alert("Registration Success");
+        }
         location.replace("/board");
     });
 });
