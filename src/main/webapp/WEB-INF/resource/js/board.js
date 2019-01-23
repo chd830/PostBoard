@@ -27,6 +27,12 @@ $(document).ready(function () {
             sessionStorage.post = JSON.stringify({result: [result]});
         })
     })
+
+    $('.row').append('<table></table>');
+    var table = $('.row').children();
+    for(var i=0;i<3;i++){
+        table.append( '<tr><td>' + 'result' +  i + '</td></tr>' );
+    }
 });
 $('#log-out').click(function () {
     document.cookie = "cookie=";

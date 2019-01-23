@@ -25,7 +25,8 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>g
+        </button>
+        g
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
@@ -98,43 +99,37 @@
     <!-- /.row -->
     <!-- Content Row -->
     <div class="row">
-        <div class="col-md-4 mb-4">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h2 class="post">Card title</h2>
-                    <h4 class="post">card content</h4>
-                </div>
-            </div>
-        </div>
-        <!-- /.col-md-4 -->
-        <div class="col-md-4 mb-4">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h2 class="post">Card title</h2>
-                    <h4 class="post">card content</h4>
-                </div>
-            </div>
-        </div>
-        <!-- /.col-md-4 -->
-        <div class="col-md-4 mb-4">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h2 class="post">Card title</h2>
-                    <h4 class="post">card content</h4>
-                </div>
-            </div>
-            <!-- /.col-md-4 -->
-
-        </div>
+        <%--<div class="col-md-4 mb-4">--%>
+            <%--<div class="card h-100">--%>
+                <%--<div class="card-body">--%>
+                    <%--<h2 class="post">Card title</h2>--%>
+                    <%--<h4 class="post">card content</h4>--%>
+                <%--</div>--%>
+            <%--</div>--%>
+        <%--</div>--%>
+        <%--<div class="col-md-4 mb-4">--%>
+            <%--<div class="card h-100">--%>
+                <%--<div class="card-body">--%>
+                    <%--<h2 class="post">Card title</h2>--%>
+                    <%--<h4 class="post">card content</h4>--%>
+                <%--</div>--%>
+            <%--</div>--%>
+        <%--</div>--%>
+        <%--<div class="col-md-4 mb-4">--%>
+            <%--<div class="card h-100">--%>
+                <%--<div class="card-body">--%>
+                    <%--<h2 class="post">Card title</h2>--%>
+                    <%--<h4 class="post">card content</h4>--%>
+                <%--</div>--%>
+            <%--</div>--%>
+        <%--</div>--%>
         <!-- /.row -->
 
     </div>
     <!-- /.container -->
 
     <!-- Footer -->
-    <%--<footer class="py-5 bg-dark" id="footer">--%>
-        <input type="submit" id="writeBtn" value="Write a post"/>
-        <!-- /.container -->
+    <input type="submit" id="writeBtn" value="Write a post"/>
     <%--</footer>--%>
 
     <!-- Bootstrap core JavaScript -->
