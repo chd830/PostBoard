@@ -42,7 +42,8 @@
 <div class="container">
 
     <!-- Heading Row -->
-    <div class="row my-4">
+    <div
+            class="row my-4">
 
         <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="1000">
             <ol class="carousel-indicators">
@@ -98,7 +99,7 @@
     </div>
     <!-- /.row -->
     <!-- Content Row -->
-    <div class="row">
+    <div class="table">
         <%--<div class="col-md-4 mb-4">--%>
             <%--<div class="card h-100">--%>
                 <%--<div class="card-body">--%>
