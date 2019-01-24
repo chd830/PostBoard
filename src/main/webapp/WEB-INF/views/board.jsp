@@ -1,5 +1,5 @@
+<!DOCTYPE>
 <html>
-
 <head>
 
     <meta charset="utf-8">
@@ -99,7 +99,16 @@
     </div>
     <!-- /.row -->
     <!-- Content Row -->
-    <div class="table">
+    <div class="block">
+        <%--<table>--%>
+            <%--<tbody>--%>
+            <%--<tr style="width: 100%;">--%>
+                <%--<td style="width: 33%;">Data 1</td>--%>
+                <%--<td style="width: 33%;">Data 2</td>--%>
+                <%--<td style="width: 33%;">Data 3</td>--%>
+            <%--</tr>--%>
+            <%--</tbody>--%>
+        <%--</table>--%>
         <%--<div class="col-md-4 mb-4">--%>
             <%--<div class="card h-100">--%>
                 <%--<div class="card-body">--%>
