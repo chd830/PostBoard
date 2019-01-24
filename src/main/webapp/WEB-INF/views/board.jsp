@@ -100,43 +100,7 @@
     <!-- /.row -->
     <!-- Content Row -->
     <div class="block">
-        <%--<table>--%>
-            <%--<tbody>--%>
-            <%--<tr style="width: 100%;">--%>
-                <%--<td style="width: 33%;">Data 1</td>--%>
-                <%--<td style="width: 33%;">Data 2</td>--%>
-                <%--<td style="width: 33%;">Data 3</td>--%>
-            <%--</tr>--%>
-            <%--</tbody>--%>
-        <%--</table>--%>
-        <%--<div class="col-md-4 mb-4">--%>
-            <%--<div class="card h-100">--%>
-                <%--<div class="card-body">--%>
-                    <%--<h2 class="post">Card title</h2>--%>
-                    <%--<h4 class="post">card content</h4>--%>
-                <%--</div>--%>
-            <%--</div>--%>
-        <%--</div>--%>
-        <%--<div class="col-md-4 mb-4">--%>
-            <%--<div class="card h-100">--%>
-                <%--<div class="card-body">--%>
-                    <%--<h2 class="post">Card title</h2>--%>
-                    <%--<h4 class="post">card content</h4>--%>
-                <%--</div>--%>
-            <%--</div>--%>
-        <%--</div>--%>
-        <%--<div class="col-md-4 mb-4">--%>
-            <%--<div class="card h-100">--%>
-                <%--<div class="card-body">--%>
-                    <%--<h2 class="post">Card title</h2>--%>
-                    <%--<h4 class="post">card content</h4>--%>
-                <%--</div>--%>
-            <%--</div>--%>
-        <%--</div>--%>
-        <!-- /.row -->
-
     </div>
-    <!-- /.container -->
 
     <!-- Footer -->
     <input type="submit" id="writeBtn" value="Write a post"/>

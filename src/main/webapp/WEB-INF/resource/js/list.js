@@ -1,10 +1,10 @@
 'use strict';
-//
-// $(document).ready(function () {
-//     //  $.post("/post/post_list", function (result) {
-//     //         console.dir(result);
-//     // },"jsp")
-// });
+
+$(document).ready(function () {
+     $.post("/rest/list", function (result) {
+            console.dir(result);
+    })
+});
 //
 // $(window).scroll(function () {
 //     var dh = $(document).height();
