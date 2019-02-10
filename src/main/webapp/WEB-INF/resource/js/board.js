@@ -9,23 +9,25 @@ $('#writeBtn').click(function () {
 });
 
 $(document).ready(function () {
-    var count = 0;
+    $('.block').css("width", "100%");
+    var count = 0 ;
+    var num = 0;
+    for (var i = 0; i < 3; i++) {
+        $('.block').append('<div class="post"></div>');
+    }
+    $('.post').append('<p></p><p></p>');
     $.get('/rest/board', function (result) {
-        $('.block').append('<table></table>');
-        var table = $('.block').children();
-
-        for(var i = 0; i < 3; i++) {
-            table.append('<td class = "cell">' + result[i].title + '</td>');
-        }
-
-        table.append('<tr>');
-        for(var i = 0; i < 3; i++) {
-            table.append('<td class = "cell">' + result[i].content + '</td>');
-        }
-        table.css("width","100%");
-        table.css("font-size","45px");
-        $('.cell').css("width","33%");
-    })
+        $('p').each(function() {
+            if(count%2 == 0) {
+                $(this).text(result[num].title);
+                count++;
+            }
+            else if(count%2 == 1) {
+                $(this).text(result[num++].content);
+                count++;
+            }
+        })
+    });
 });
 
 

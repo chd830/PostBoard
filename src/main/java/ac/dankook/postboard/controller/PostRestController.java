@@ -62,7 +62,7 @@ public class PostRestController {
     @RequestMapping(value = "/list", method = RequestMethod.POST)
     public Object getList(HttpServletRequest request) {
         String userNo = HttpUtils.getUserNoFromCookie(request);
-        if(StringUtils.isNotBlank(userNo)) {
+        if (StringUtils.isNotBlank(userNo)) {
             Model model = new Model() {
                 @Override
                 public Model addAttribute(String s, Object o) {

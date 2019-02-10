@@ -64,3 +64,10 @@ header.carousel {
 #log-out a{
     padding-left: 850px;
 }
+.block {
+    display:inline-block;
+}
+.post {
+    width: 30%;
+    margin: 0;
+}
