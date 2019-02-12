@@ -104,6 +104,7 @@
     </div>
 
     <!-- Footer -->
+    <input type="submit" id="listBtn" value="Show post list"/>
     <input type="submit" id="writeBtn" value="Write a post"/>
     <%--</footer>--%>
 

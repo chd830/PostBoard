@@ -13,8 +13,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Collection;
-import java.util.Map;
 
 @Controller
 @RequestMapping(UrlConstants.POST)
@@ -30,7 +28,7 @@ public class PostController {
     @RequestMapping()
     public String post(HttpServletRequest request) {
         String userNo = HttpUtils.getUserNoFromCookie(request);
-        if (StringUtils.isNotBlank(userNo)) {
+        if (HttpUtils.existsUserNo(request)) {
             return "post";
         }
         return "redirect:/";
@@ -39,7 +37,7 @@ public class PostController {
     @RequestMapping("/write")
     public String postboard(HttpServletRequest request) {
         String userNo = HttpUtils.getUserNoFromCookie(request);
-        if (StringUtils.isNotBlank(userNo)) {
+        if (HttpUtils.existsUserNo(request)) {
             return "write";
         }
         return "redirect:/";
@@ -48,7 +46,7 @@ public class PostController {
     @RequestMapping(value = "/list")
     public String postList(Model model, HttpServletRequest request) {
         String userNo = HttpUtils.getUserNoFromCookie(request);
-        if (StringUtils.isNotBlank(userNo)) {
+        if (HttpUtils.existsUserNo(request)) {
             model.addAttribute("list", postService.getPostByUserNo(userNo));
             model.addAttribute("userName", userService.getUserName(userNo));
             return "list";

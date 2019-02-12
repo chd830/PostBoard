@@ -57,7 +57,19 @@ header.carousel {
     font-size: 22px;
     text-align: center;
 }
-
+#listBtn {
+    margin-top: 70px;
+    width: 100%;
+    height: 75px;
+    border: none;
+    background-color: #343a40;
+    color: white;
+    font-size: 22px;
+    text-align: center;
+}
+#listBtn:hover {
+    background-color: dimgrey;
+}
 #writeBtn:hover {
     background-color: dimgrey;
 }

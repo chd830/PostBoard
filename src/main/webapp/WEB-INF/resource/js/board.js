@@ -7,7 +7,9 @@ window.onpopstate = function (event) {
 $('#writeBtn').click(function () {
     location.replace('/post/write');
 });
-
+$('#listBtn').click(function () {
+    location.replace('/post/list');
+});
 $(document).ready(function () {
     $('.block').css("width", "100%");
     var count = 0 ;

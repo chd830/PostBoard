@@ -31,7 +31,7 @@ public class BoardController {
         LOGGER.debug("PostController");
 
         String userNo = HttpUtils.getUserNoFromCookie(request);
-        if (StringUtils.isNotBlank(userNo)) {
+        if (HttpUtils.existsUserNo(request)) {
             return "board";
         }
         return "redirect:/";
@@ -39,10 +39,10 @@ public class BoardController {
 
     @ResponseBody
     @RequestMapping(value = "/rest/board", method = RequestMethod.GET)
-    public List<Post> recentPostList(@CookieValue(value = HttpConstants.COOKIE_NAME) Cookie cookie) {
+    public List<Post> recentPostList(HttpServletRequest request,@CookieValue(value = HttpConstants.COOKIE_NAME) Cookie cookie) {
 
         String userNo = cookie.getValue();
-        if (StringUtils.isNotBlank(userNo)) {
+        if (HttpUtils.existsUserNo(request)) {
             return postService.getMainPostByUserNo(userNo);
         }
         return null;

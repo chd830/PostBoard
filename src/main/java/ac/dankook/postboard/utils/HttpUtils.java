@@ -46,5 +46,4 @@ public class HttpUtils {
         SimpleDateFormat simple = new SimpleDateFormat("yyyy.mm.dd");
         return simple.format(date);
     }
-
 }
