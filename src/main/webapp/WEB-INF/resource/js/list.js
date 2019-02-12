@@ -2,7 +2,6 @@
 
 $(document).ready(function () {
      $.post("/rest/list", function (result) {
-            console.dir(result.list);
             for(var i = 0; i<result.list.length; i++) {
                 console.log(result.list[i]);
             }
