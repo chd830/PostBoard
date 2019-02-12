@@ -28,30 +28,30 @@
     <table class="table">
         </thead>
         <tbody>
-        <c:choose>
-            <c:when test="${fn:length(list) > 0 }">
-                <%
-                    int num = 1;
-                    int next = 0;
-                %>
-                <c:forEach items="${list}" var="list" begin="0" end="14">
-                    <tr>
-                        <th scope="row"><%= num++ %>
-                        </th>
-                        <td>${list.title }</td>
-                        <td>${user}</td>
-                        <td id="last">${list.updateDate}</td>
-                    </tr>
-                </c:forEach>
-                <input type="hidden" id="end" value="<%=num%>"/>
-                <input type="hidden" id="next" value="<%=next%>"/>
-            </c:when>
-            <c:otherwise>
-                <tr>
-                    <td colspan="5">조회된 결과가 없습니다.</td>
-                </tr>
-            </c:otherwise>
-        </c:choose>
+        <%--<c:choose>--%>
+            <%--<c:when test="${fn:length(list) > 0 }">--%>
+                <%--<%--%>
+                    <%--int num = 1;--%>
+                    <%--int next = 0;--%>
+                <%--%>--%>
+                <%--<c:forEach items="${list}" var="list" begin="0" end="14">--%>
+                    <%--<tr>--%>
+                        <%--<th scope="row"><%= num++ %>--%>
+                        <%--</th>--%>
+                        <%--<td>${list.title }</td>--%>
+                        <%--<td>${user}</td>--%>
+                        <%--<td id="last">${list.updateDate}</td>--%>
+                    <%--</tr>--%>
+                <%--</c:forEach>--%>
+                <%--<input type="hidden" id="end" value="<%=num%>"/>--%>
+                <%--<input type="hidden" id="next" value="<%=next%>"/>--%>
+            <%--</c:when>--%>
+            <%--<c:otherwise>--%>
+                <%--<tr>--%>
+                    <%--<td colspan="5">조회된 결과가 없습니다.</td>--%>
+                <%--</tr>--%>
+            <%--</c:otherwise>--%>
+        <%--</c:choose>--%>
 
         </tbody>
     </table>

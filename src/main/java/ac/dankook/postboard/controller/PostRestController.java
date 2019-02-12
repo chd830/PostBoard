@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Collection;
@@ -50,64 +52,13 @@ public class PostRestController {
         return false;
     }
 
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public List<Post> postList(HttpServletRequest request) {
-        String userNo = HttpUtils.getUserNoFromCookie(request);
-        if (StringUtils.isNotBlank(userNo)) {
-            return postService.getPostByUserNo(userNo);
-        }
-        return null;
-    }
-
     @RequestMapping(value = "/list", method = RequestMethod.POST)
-    public Object getList(HttpServletRequest request) {
+    public Object postList(HttpServletRequest request) {
+
         String userNo = HttpUtils.getUserNoFromCookie(request);
-        if (StringUtils.isNotBlank(userNo)) {
-            Model model = new Model() {
-                @Override
-                public Model addAttribute(String s, Object o) {
-                    return null;
-                }
-
-                @Override
-                public Model addAttribute(Object o) {
-                    return null;
-                }
-
-                @Override
-                public Model addAllAttributes(Collection<?> collection) {
-                    return null;
-                }
-
-                @Override
-                public Model addAllAttributes(Map<String, ?> map) {
-                    return null;
-                }
-
-                @Override
-                public Model mergeAttributes(Map<String, ?> map) {
-                    return null;
-                }
-
-                @Override
-                public boolean containsAttribute(String s) {
-                    return false;
-                }
-
-                @Override
-                public Map<String, Object> asMap() {
-                    return null;
-                }
-            };
-
-            List<Post> list = postService.getList(userNo);
-
-            String userName = userService.getUserName(userNo);
-            model.addAttribute("list", list);
-            model.addAttribute("user", userName);
-
-            return model;
-        }
-        return "";
+        ModelAndView model = new ModelAndView(new MappingJackson2JsonView());
+        model.addObject("list", postService.getPostByUserNo(userNo));
+        model.addObject("userName", userService.getUserName(userNo));
+        return model;
     }
 }
