@@ -8,8 +8,7 @@
 }
 
 body {
-    background-image: url('https://images.unsplash.com/photo-1532759627329-f664e1222001?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=537cade15160d9b107efb16a1456bb5d&auto=format&fit=crop&w=1952&q=80');
-    /*background-image: url('https://images.unsplash.com/photo-1422207258071-70754198c4a2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b3ead7d2589717f5e1449373f47426e2&auto=format&fit=crop&w=1041&q=80');*/
+    background-image: url('https://images.unsplash.com/photo-1505678137082-8a4376f90c86?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5f10deb85f67f64cc185b5b61b547cdc&auto=format&fit=crop&w=1050&q=80');
     background-size: cover;
 }
 
@@ -50,27 +49,26 @@ body, input, button {
     text-shadow: 1px 1px 3px #23203b;
 }
 
-.login form .input-group {
+.login .input-group {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-
-.login form .input-group:last-of-type {
+.login .input-group:last-of-type {
     border-top: none;
 }
 
-.login form .input-group span {
+.login .input-group span {
     background: transparent;
     min-width: 53px;
     border: none;
 }
 
-.login form .input-group span i {
+.login .input-group span i {
     font-size: 1.5em;
     color: rgba(255, 255, 255, 0.2);
 }
 
-.login form input.form-control {
+.login input.form-control {
     display: block;
     width: auto;
     height: auto;
@@ -86,11 +84,11 @@ body, input, button {
     color: gray();
 }
 
-.login form input.form-control:focus {
+.login input.form-control:focus {
     border: none;
 }
 
-.login form button {
+.login button {
     margin-top: 20px;
     background: #c0c0c0;
     border: none;
@@ -103,7 +101,7 @@ body, input, button {
     border-bottom: 4px solid #a9a9a9;
 }
 
-.login form button:hover {
+.login button:hover {
     background: grey;
     -webkit-animation: hop 1s;
     animation: hop 1s;

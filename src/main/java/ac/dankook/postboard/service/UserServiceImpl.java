@@ -1,6 +1,5 @@
 package ac.dankook.postboard.service;
 
-import ac.dankook.postboard.data.LogIn;
 import ac.dankook.postboard.data.User;
 import ac.dankook.postboard.repository.UserRepository;
 import org.slf4j.Logger;
@@ -10,30 +9,43 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserServiceImpl implements UserService {
+    private static Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
+
     @Autowired
     UserRepository userRepository;
-    public static Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
+
 
     public void setSignUpData(User user) {
-        userRepository.setUserData(user);
+        userRepository.insert(user);
     }
-    public LogIn getUserPassword(LogIn login) {
-        LogIn user = userRepository.getUserPassword(login.getUserId());;
-        return user;
+
+    public int getUserNo(String userId) {
+        if (null != userRepository.getUserNo(userId))
+            return userRepository.getUserNo(userId).getUserNo();
+        return 0;
     }
-    public Boolean checkPassword(LogIn login) {
-        String userPw = login.getUserPw();
-        String checkPw = this.getUserPassword(login).getUserPw();
-        LOGGER.debug(userPw);
+
+    public String getUserPassword(User user) {
+        return userRepository.getPassword(user).getUserPw();
+    }
+
+    public boolean checkPassword(User user) {
+        String userPw = user.getUserPw();
+        String checkPw = this.getUserPassword(user);
+        LOGGER.debug("input password: " + userPw);
         LOGGER.debug(checkPw);
 
-        if(checkPw.equals(userPw)) {
+        if (checkPw.equals(userPw)) {
             LOGGER.debug("true");
             return true;
         }
-        else {
-            LOGGER.debug("false");
-            return false;
-        }
+        LOGGER.debug("false");
+        return false;
+    }
+
+    public String getUserName(String userNo) {
+        User user = userRepository.getUserName(userNo);
+        if (user != null) return user.getUserName();
+        return null;
     }
 }

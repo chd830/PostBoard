@@ -6,13 +6,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <mvc:annotation-driven/>
-
     <context:component-scan base-package="ac.dankook.postboard">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
-    <!--<bean id="TestRestController" class="ac.dankook.postboard.controller.TestRestController"/>-->
-    <!--<bean id="TestRepository" class="ac.dankook.postboard.repository.TestRepositoryImpl" />-->
-    <!--<bean id="TestService" class="ac.dankook.postboard.service.TestServiceImpl" />-->
 
     <context:property-placeholder location="classpath:/properties/*.properties"/>
 

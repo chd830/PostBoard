@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="userMapper">
+    <insert id="insert">
+        INSERT INTO userTable(userId,userPw,userName,email,createDate,updateDate)
+        VALUES (#{userId},#{userPw},#{userName},#{email},NOW(),NOW());
+    </insert>
+    <select id="selectUserNo" resultType="ac.dankook.postboard.data.User">
+        SELECT userNo
+        FROM userTable
+        WHERE userId=#{userId};
+    </select>
+    <select id="selectUserPassword" resultType="ac.dankook.postboard.data.User">
+        SELECT userPw
+        FROM usertable
+        WHERE userNo=#{userNo};
+    </select>
+    <select id="selectUserNameByUserNo" resultType="ac.dankook.postboard.data.User">
+        SELECT userName
+        FROM usertable
+        WHERE userNo=#{userNo};
+    </select>
+
+</mapper>

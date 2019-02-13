@@ -1,20 +1,64 @@
 package ac.dankook.postboard.service;
 
+import ac.dankook.postboard.data.Post;
 import ac.dankook.postboard.repository.PostRepository;
+import ac.dankook.postboard.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class PostServiceImpl implements PostService {
+    private static final Logger LOGGER = LoggerFactory.getLogger(PostService.class);
+
     @Autowired
-    private PostRepository postRepository;
+    PostRepository postRepository;
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(PostServiceImpl.class);
+    @Autowired
+    UserRepository userRepository;
 
-    public void testMybatisService() {
-        LOGGER.debug("TestServiceImpl");
-        postRepository.testMybatisRepository();
+    public void setPost(Post post) {
+        post.setUserName(userRepository.getUserName(post.getUserNo()).getUserName());
+        postRepository.insert(post);
+    }
+
+    public List<Post> getPostByUserNo(String userNo) {
+        List<Post> postList = postRepository.selectPostListByUserNo(userNo);
+        return postList;
+    }
+
+    public List<Post> getMainPostByUserNo(String userNo) {
+        List<Post> postList = postRepository.selectPostListByUserNo(userNo);
+        List<Post> topThreePost = new ArrayList<>();
+        int size = postList.size();
+        if (postList.size() < 3) {
+            for (int i = size; i > 0; i--) {
+                topThreePost.add(postList.get(i - 1));
+            }
+        } else {
+            for (int i = size - 1; i > postList.size() - 4; i--) {
+                topThreePost.add(postList.get(i));
+            }
+        }
+
+        if (postList != null) {
+            return topThreePost;
+        }
+        return null;
+    }
+
+    public List<Post> getList(String userNo) {
+        List<Post> list = new ArrayList<>();
+        list = getPostByUserNo(userNo);
+        if (!list.isEmpty()) return list;
+        return null;
+    }
+
+    public int getListCountNumber(String userNo) {
+        return postRepository.selectPostListNumber(userNo);
     }
 }

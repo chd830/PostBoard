@@ -1,0 +1,25 @@
+body {
+    background-image: url('https://images.unsplash.com/photo-1505678137082-8a4376f90c86?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5f10deb85f67f64cc185b5b61b547cdc&auto=format&fit=crop&w=1050&q=80');
+    background-size: cover;
+}
+table {
+    margin: 0 auto;
+    padding-top:10%;
+    font-size:30px;
+}
+input {
+    size: 40px;
+    font-size: 25px;
+}
+textarea {
+    font-size:25px;
+    margin: 0 auto;
+}
+.title {
+    padding-right: 20px;
+}
+.row {
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);

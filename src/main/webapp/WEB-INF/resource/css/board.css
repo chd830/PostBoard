@@ -1,0 +1,85 @@
+/*!
+ * Start Bootstrap - Small Business (https://startbootstrap.com/template-overviews/small-business)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-small-business/blob/master/LICENSE)
+ */
+
+body {
+    -webkit-background-size: cover;
+    background-image: url('https://images.unsplash.com/photo-1505678137082-8a4376f90c86?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5f10deb85f67f64cc185b5b61b547cdc&auto=format&fit=crop&w=1050&q=80');
+}
+
+#sign-in {
+    margin-left: 155%;
+}
+
+.row {
+    margin-top: 100px!important;
+    height: 300px;
+}
+
+header.carousel {
+    height: 30%;
+}
+
+@media (min-width: 992px) {
+    .img-responsive,
+    .thumbnail > img, thumbnail a > img,
+    .carousel-inner > .item > img,
+    .carousel-inner > .item > img {
+        height: 300px;
+    }
+}
+
+.row {
+    margin-top: 30px;
+}
+
+.py-5 {
+    margin-top: 70px;
+}
+
+.h-100 {
+    height: 350px !important;
+}
+
+#myCarousel {
+    width: 100%;
+}
+
+#writeBtn {
+    margin-top: 70px;
+    width: 100%;
+    height: 75px;
+    border: none;
+    background-color: #343a40;
+    color: white;
+    font-size: 22px;
+    text-align: center;
+}
+#listBtn {
+    margin-top: 70px;
+    width: 100%;
+    height: 75px;
+    border: none;
+    background-color: #343a40;
+    color: white;
+    font-size: 22px;
+    text-align: center;
+}
+#listBtn:hover {
+    background-color: dimgrey;
+}
+#writeBtn:hover {
+    background-color: dimgrey;
+}
+#log-out a{
+    padding-left: 850px;
+}
+.block {
+    display:inline-block;
+}
+.post {
+    width: 30%;
+    margin: 0;
+}
