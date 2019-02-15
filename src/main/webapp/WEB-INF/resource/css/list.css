@@ -1,6 +1,6 @@
 .table {
     margin: 15% !important;
 }
-#list {
+#table:only-child {
     font-size: 25px;
 }

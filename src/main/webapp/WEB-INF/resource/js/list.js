@@ -1,19 +1,31 @@
 'use strict';
-
+var dh;
+var wh;
+var wt;
+var max;
 $(document).ready(function () {
-    //  $.post("/rest/list", function (result) {
-    //         for(var i = 15; i < 30; i++) {
-    //             console.log(result.list[i]);
-    //         }
-    // })
-});
+    dh = $(document).height();
+    wh = $(window).height();
+    wt = $(window).scrollTop();
+    max = (wh + wt) / dh;
+})
+
+function appendList() {
+    $.post("/rest/list", function (result) {
+        for (var i = 25; i < 49; i++) {
+            $('#table:last-child').append('<tr><th id="row"></th><th id="title"></th><th id="userName"></th><th id="updateDate"></th>');
+        }
+    })
+}
 
 $(window).scroll(function () {
-    var dh = $(document).height();
-    var wh = $(window).height();
-    var wt = $(window).scrollTop();
+    dh = $(document).height();
+    wh = $(window).height();
+    wt = $(window).scrollTop();
     var per = (wh + wt) / dh;
-    if (per > 1) {
-        console.log("per: "+per);
+    if (max < per) {
+        appendList();
+        console.log("per: " + per);
+        max = per;
     }
 })
