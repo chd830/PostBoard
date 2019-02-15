@@ -34,12 +34,12 @@
                     int num = 1;
                     int next = 0;
                 %>
-                <c:forEach items="${list}" var="list" begin="0" end="20">
+                <c:forEach items="${list}" var="list" begin="0" end="19">
                     <tr>
                         <th scope="row"><%= num++ %>
                         </th>
                         <td>${list.title }</td>
-                        <td>${userName}</td>
+                        <td id="userName">${userName}</td>
                         <td id="last">${list.updateDate}</td>
                     </tr>
                 </c:forEach>
