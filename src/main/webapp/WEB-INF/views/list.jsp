@@ -34,8 +34,8 @@
                     int num = 1;
                     int next = 0;
                 %>
-                <c:forEach items="${list}" var="list" begin="0" end="14">
-                    <tr>
+                <c:forEach items="${list}" var="list" begin="0" end="24">
+                    <tr id="list">
                         <th scope="row"><%= num++ %>
                         </th>
                         <td>${list.title }</td>

@@ -1,4 +1,6 @@
 .table {
-    margin-top: 15% !important;
-    margin-bottom: 15% !important;
+    margin: 15% !important;
+}
+#list {
+    font-size: 25px;
 }
