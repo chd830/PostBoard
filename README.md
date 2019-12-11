@@ -1,5 +1,6 @@
 # PostBoard
 > - **2018.10.11** 부터 **2019.02.13** 까지 진행.
+> - `Spring MVC`기반의 웹 게시판 프로젝트.
 > - `Maven`으로 `Spring framework` 설정.
 > - `Apache tomcat`으로 서버를 연결.
 > - `JDBC`, `MyBatis`로 db사용.
